@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DEBORA - Portfolio</title>
     <style>
-        /* Importamos Space Grotesk, perfecta para este estilo técnico y geométrico */
+        /* Tipografía Space Grotesk para mantener el estilo geométrico y los ceros tachados */
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap');
 
         :root {
-            --bg-color: #0d0d0d;
-            --text-color: #f5f5f5;
-            --border-color: rgba(255, 255, 255, 0.15);
+            --bg-color: rgba(0, 0, 0, 0.95);
+            --text-main: rgba(255, 255, 255, 0.85);
+            --text-muted: rgba(132, 132, 132, 0.85);
+            --border-color: rgba(255, 255, 255, 0.4);
             --font-main: 'Space Grotesk', Helvetica, Arial, sans-serif;
         }
 
@@ -23,11 +24,10 @@
 
         body {
             background-color: var(--bg-color);
-            color: var(--text-color);
+            color: var(--text-main);
             font-family: var(--font-main);
             text-transform: uppercase;
-            /* Activamos el cero tachado (slashed zero) característico de tu imagen */
-            font-variant-numeric: slashed-zero; 
+            font-variant-numeric: slashed-zero;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
@@ -48,10 +48,11 @@
             justify-content: space-between;
             align-items: center;
             padding: 2rem 3rem;
-            font-size: 0.85rem;
-            font-weight: 500;
-            letter-spacing: 0.05em;
-            border-bottom: 1px solid var(--border-color);
+            font-size: 1.1rem;
+            position: sticky;
+            top: 0;
+            background-color: var(--bg-color);
+            z-index: 100;
         }
 
         .nav-left, .nav-right {
@@ -67,50 +68,57 @@
         .nav-center {
             flex: 1;
             text-align: center;
-            font-size: 1.2rem;
-            font-weight: 600;
-            letter-spacing: 0.1em;
+            font-size: 2rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
         }
 
-        /* --- SECCIÓN HERO (ESLOGAN) --- */
+        /* --- HERO --- */
         .hero {
             text-align: center;
             padding: 8rem 2rem;
-            border-bottom: 1px solid var(--border-color);
         }
 
         .hero h1 {
-            font-size: clamp(1.8rem, 4vw, 3.5rem);
+            font-size: 3.5rem;
             font-weight: 400;
+            line-height: 1.2;
             max-width: 900px;
             margin: 0 auto;
-            line-height: 1.2;
-            letter-spacing: -0.01em;
         }
 
         /* --- CUADRÍCULA DE PROYECTOS --- */
         .projects-container {
-            padding: 4rem 3rem;
+            padding: 0 3rem 4rem 3rem;
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(3, 1fr); /* 3 columnas */
             gap: 4rem 2rem;
-            align-items: start;
+            border-top: 1px solid var(--border-color); /* Línea separadora superior */
+            padding-top: 3rem;
         }
 
         .project-item {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 1rem;
             cursor: pointer;
+        }
+
+        /* Título del proyecto ARRIBA de la imagen */
+        .project-title {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
         }
 
         .project-image {
             width: 100%;
+            aspect-ratio: 4 / 5; /* Todas las imágenes forzadas a vertical */
+            background-color: #111;
             overflow: hidden;
-            background-color: #1a1a1a;
         }
 
         .project-image img {
@@ -118,86 +126,35 @@
             height: 100%;
             object-fit: cover;
             display: block;
-            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+            transition: opacity 0.3s ease;
         }
 
+        /* Efecto al pasar el ratón (la imagen se atenúa un poco) */
         .project-item:hover .project-image img {
-            transform: scale(1.04);
+            opacity: 0.7;
         }
 
-        .aspect-16-9 {
-            aspect-ratio: 16 / 9;
-        }
-
-        .aspect-4-5 {
-            aspect-ratio: 4 / 5;
-        }
-
-        /* --- NUEVO ESTILO DE TEXTO DE PROYECTOS --- */
-        .project-info {
-            display: grid;
-            grid-template-columns: 1fr 1fr; /* Divide el texto en dos mitades */
-            gap: 1rem;
-            font-size: 0.85rem;
-            font-weight: 500;
-            letter-spacing: 0.02em;
-        }
-
-        .project-title {
-            grid-column: 1 / 2;
-            margin: 0;
-        }
-
-        .project-details {
-            grid-column: 2 / 3;
+        /* --- FOOTER --- */
+        footer {
             display: flex;
-            flex-direction: column;
-            gap: 1.5rem; /* Espacio entre descripción y código */
-        }
-
-        .project-desc {
-            margin: 0;
-            line-height: 1.3;
-        }
-
-        .project-code {
-            margin: 0;
+            justify-content: space-between;
+            padding: 2rem 3rem;
+            color: var(--text-muted);
+            font-size: 1.12rem;
+            border-top: 1px solid var(--border-color);
         }
 
         /* --- RESPONSIVO --- */
         @media (max-width: 1024px) {
-            .grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            .grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 1.5rem;
-                padding: 1.5rem;
-            }
-            .nav-left, .nav-right {
-                justify-content: center;
-                gap: 1.5rem;
-            }
-            .grid {
-                grid-template-columns: 1fr;
-            }
-            .projects-container {
-                padding: 2rem 1.5rem;
-            }
-            .hero {
-                padding: 5rem 1rem;
-            }
-            .project-info {
-                grid-template-columns: 1fr; /* En móviles vuelve a ser una columna */
-                gap: 0.5rem;
-            }
-            .project-details {
-                grid-column: 1 / 2;
-                gap: 0.5rem;
-            }
+            header { flex-direction: column; gap: 1.5rem; padding: 1.5rem; }
+            .nav-left, .nav-right { justify-content: center; gap: 1.5rem; }
+            .grid { grid-template-columns: 1fr; }
+            .projects-container { padding: 0 1.5rem 2rem 1.5rem; }
+            .hero h1 { font-size: 2rem; }
         }
     </style>
 </head>
@@ -206,21 +163,21 @@
     <!-- CABECERA -->
     <header>
         <div class="nav-left">
-            <a href="#">Works</a>
-            <a href="#">My Own Brief</a>
+            <a href="#">WORKS</a>
+            <a href="#">MY OWN BRIEF</a>
         </div>
         <div class="nav-center">
             <a href="#">DEBORA</a>
         </div>
         <div class="nav-right">
-            <a href="#">About</a>
-            <a href="#">Contact</a>
+            <a href="#">ABOUT</a>
+            <a href="#">CONTACT</a>
         </div>
     </header>
 
     <!-- ESLOGAN PRINCIPAL -->
     <section class="hero">
-        <h1>LOREM IPSUM DOLOR SIT AMET,<br>CONSECTETUR ADIPISCING ELIT<br>SED DO EIUSMOD TEMPOR.</h1>
+        <h1>DESIGNING FROM OBSERVATION<br>INTUITION AND IMPULSE</h1>
     </section>
 
     <!-- PROYECTOS -->
@@ -228,133 +185,61 @@
         <div class="grid">
             
             <!-- Proyecto 1 -->
-            <a href="#proyecto-1" class="project-item">
-                <div class="project-image aspect-16-9">
-                    <img src="img/home/imagen (16.9).jpg" alt="Sopfeu Project">
-                </div>
-                <div class="project-info">
-                    <div class="project-title">SOPFEU</div>
-                    <div class="project-details">
-                        <p class="project-desc">HARNESSING REAL-TIME DATA TO CREATE THE ULTIMATE PREVENTION TOOL</p>
-                        <p class="project-code">PSF-0325</p>
-                    </div>
+            <a href="proyecto.html" class="project-item">
+                <div class="project-title">PROJECT ONE - ART DIRECTION</div>
+                <div class="project-image">
+                    <img src="imagen (4.5).jpg" alt="Proyecto 1">
                 </div>
             </a>
 
             <!-- Proyecto 2 -->
-            <a href="#proyecto-2" class="project-item">
-                <div class="project-image aspect-4-5">
-                    <img src="img/home/imagen (4.5).jpg" alt="Dime Project">
-                </div>
-                <div class="project-info">
-                    <div class="project-title">DIME</div>
-                    <div class="project-details">
-                        <p class="project-desc">MODERNIZING AN ICONIC STREETWEAR BRAND</p>
-                        <p class="project-code">PDM-1025</p>
-                    </div>
+            <a href="proyecto.html" class="project-item">
+                <div class="project-title">PROJECT TWO - BRAND IDENTITY</div>
+                <div class="project-image">
+                    <img src="imagen (4.5).jpg" alt="Proyecto 2">
                 </div>
             </a>
 
             <!-- Proyecto 3 -->
-            <a href="#proyecto-3" class="project-item">
-                <div class="project-image aspect-16-9">
-                    <img src="img/home/imagen(16.9).jpg" alt="Halo Dental Project">
-                </div>
-                <div class="project-info">
-                    <div class="project-title">HALO DENTAL</div>
-                    <div class="project-details">
-                        <p class="project-desc">BUILDING TRUST TO PROPEL A NEW PLAYER IN DENTISTRY</p>
-                        <p class="project-code">PHD-0524</p>
-                    </div>
+            <a href="proyecto.html" class="project-item">
+                <div class="project-title">PROJECT THREE - SPATIAL DESIGN</div>
+                <div class="project-image">
+                    <img src="imagen (4.5).jpg" alt="Proyecto 3">
                 </div>
             </a>
 
             <!-- Proyecto 4 -->
-            <a href="#proyecto-4" class="project-item">
-                <div class="project-image aspect-4-5">
-                    <img src="img/home/imagen (4.5).jpg" alt="Hudson's Bay">
-                </div>
-                <div class="project-info">
-                    <div class="project-title">HUDSON'S BAY</div>
-                    <div class="project-details">
-                        <p class="project-desc">A GAMIFIED APP TO FOSTER MULTI-BRAND LOYALTY</p>
-                        <p class="project-code">PRW-0823</p>
-                    </div>
+            <a href="proyecto.html" class="project-item">
+                <div class="project-title">PROJECT FOUR - PHOTOGRAPHY</div>
+                <div class="project-image">
+                    <img src="imagen (4.5).jpg" alt="Proyecto 4">
                 </div>
             </a>
 
             <!-- Proyecto 5 -->
-            <a href="#proyecto-5" class="project-item">
-                <div class="project-image aspect-16-9">
-                    <img src="img/home/imagen (16.9).jpg" alt="Nortera Project">
-                </div>
-                <div class="project-info">
-                    <div class="project-title">NORTERA</div>
-                    <div class="project-details">
-                        <p class="project-desc">A B2B PLATFORM THAT PROVES DESIGN CAN ELEVATE BUSINESS</p>
-                        <p class="project-code">PNR-0323</p>
-                    </div>
+            <a href="proyecto.html" class="project-item">
+                <div class="project-title">PROJECT FIVE - CAMPAIGN</div>
+                <div class="project-image">
+                    <img src="imagen (4.5).jpg" alt="Proyecto 5">
                 </div>
             </a>
 
             <!-- Proyecto 6 -->
-            <a href="#proyecto-6" class="project-item">
-                <div class="project-image aspect-4-5">
-                    <img src="img/home/imagen (4.5).jpg" alt="Hilo Project">
-                </div>
-                <div class="project-info">
-                    <div class="project-title">HILO</div>
-                    <div class="project-details">
-                        <p class="project-desc">CREATING A TRULY ACCESSIBLE SMART HOME SERVICE</p>
-                        <p class="project-code">PHA-1222</p>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Proyecto 7 -->
-            <a href="#proyecto-7" class="project-item">
-                <div class="project-image aspect-16-9">
-                    <img src="img/home/imagen (16.9).jpg" alt="Schweppes Project">
-                </div>
-                <div class="project-info">
-                    <div class="project-title">SCHWEPPES</div>
-                    <div class="project-details">
-                        <p class="project-desc">HOW A UNIQUE BRAND EXPERIENCE REVIVED A 200-YEAR-OLD BRAND</p>
-                        <p class="project-code">PSW-1121</p>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Proyecto 8 -->
-            <a href="#proyecto-8" class="project-item">
-                <div class="project-image aspect-4-5">
-                    <img src="img/home/imagen (4.5).jpg" alt="Royal Canadian Mint">
-                </div>
-                <div class="project-info">
-                    <div class="project-title">ROYAL CANADIAN MINT</div>
-                    <div class="project-details">
-                        <p class="project-desc">BRINGING MODERN COMMERCE TO THE TRADITIONAL WORLD OF COINS</p>
-                        <p class="project-code">PMT-0721</p>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Proyecto 9 -->
-            <a href="#proyecto-9" class="project-item">
-                <div class="project-image aspect-16-9">
-                    <img src="img/home/imagen (16.9).jpg" alt="New Look Project">
-                </div>
-                <div class="project-info">
-                    <div class="project-title">NEW LOOK</div>
-                    <div class="project-details">
-                        <p class="project-desc">AN IN-STORE EXPERIENCE TO BOOST SELF-SERVICE</p>
-                        <p class="project-code">PNL-0121</p>
-                    </div>
+            <a href="proyecto.html" class="project-item">
+                <div class="project-title">PROJECT SIX - EDITORIAL</div>
+                <div class="project-image">
+                    <img src="imagen (4.5).jpg" alt="Proyecto 6">
                 </div>
             </a>
 
         </div>
     </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div>&copy; DEBORA HILL</div>
+        <div>MADRID, ESPAÑA 2024</div>
+    </footer>
 
 </body>
 </html>
