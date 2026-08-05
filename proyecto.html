@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEBORA - Proyecto</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap');
+
+        :root {
+            --bg-color: rgba(0, 0, 0, 0.95);
+            --text-main: rgba(255, 255, 255, 0.85);
+            --text-muted: rgba(132, 132, 132, 0.85);
+            --border-color: rgba(255, 255, 255, 0.4);
+            --font-main: 'Space Grotesk', Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            text-transform: uppercase;
+            font-variant-numeric: slashed-zero;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        a:hover {
+            opacity: 0.6;
+        }
+
+        /* --- NAVEGACIÓN --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 3rem;
+            font-size: 1.1rem;
+            position: sticky;
+            top: 0;
+            background-color: var(--bg-color);
+            z-index: 100;
+        }
+
+        .nav-left, .nav-right {
+            display: flex;
+            gap: 3rem;
+            flex: 1;
+        }
+
+        .nav-right {
+            justify-content: flex-end;
+        }
+
+        .nav-center {
+            flex: 1;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+
+        /* --- IMAGEN PRINCIPAL (HERO) --- */
+        .project-hero {
+            padding: 2rem 3rem;
+        }
+
+        .project-hero img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* --- DETALLES DEL PROYECTO (3 COLUMNAS) --- */
+        .project-details {
+            display: grid;
+            grid-template-columns: 1fr 2fr 3fr; /* Proporción de las columnas */
+            gap: 3rem;
+            padding: 4rem 3rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .detail-column {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .detail-title {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+        }
+
+        .detail-content {
+            font-size: 1.15rem;
+            line-height: 1.5;
+            text-transform: none; /* En la web original, los textos descriptivos no van en mayúsculas */
+        }
+        
+        .detail-content.uppercase {
+            text-transform: uppercase;
+        }
+
+        /* --- GALERÍA INFERIOR --- */
+        .project-gallery {
+            padding: 4rem 3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .gallery-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .project-gallery img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .more-link {
+            text-align: right;
+            padding: 0 3rem 4rem 3rem;
+            font-size: 1.5rem;
+        }
+
+        /* --- FOOTER --- */
+        .slogan-footer {
+            text-align: right;
+            font-size: clamp(3rem, 6vw, 6rem);
+            color: rgba(255, 255, 255, 0.06); /* Texto gigante casi transparente */
+            padding: 3rem;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 2rem 3rem;
+            color: var(--text-muted);
+            font-size: 1.12rem;
+        }
+
+        /* --- RESPONSIVO --- */
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 1.5rem; padding: 1.5rem; }
+            .nav-left, .nav-right { justify-content: center; gap: 1.5rem; }
+            .project-details { grid-template-columns: 1fr; gap: 3rem; padding: 2rem 1.5rem; }
+            .project-hero, .project-gallery, .more-link { padding-left: 1.5rem; padding-right: 1.5rem; }
+            .gallery-row { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CABECERA -->
+    <header>
+        <div class="nav-left">
+            <!-- Enlaces funcionales que llevan a la portada -->
+            <a href="index.html">WORKS</a>
+            <a href="#">MY OWN BRIEF</a>
+        </div>
+        <div class="nav-center">
+            <a href="index.html">DEBORA</a>
+        </div>
+        <div class="nav-right">
+            <a href="#">ABOUT</a>
+            <a href="#">CONTACT</a>
+        </div>
+    </header>
+
+    <!-- IMAGEN PRINCIPAL -->
+    <section class="project-hero">
+        <img src="img/home/imagen (16.9).jpg" alt="Hero Image">
+    </section>
+
+    <!-- DETALLES (3 COLUMNAS) -->
+    <section class="project-details">
+        <div class="detail-column">
+            <div class="detail-title">CLIENT</div>
+            <div class="detail-content uppercase">NIKE GWP</div>
+        </div>
+        
+        <div class="detail-column">
+            <div class="detail-title">SERVICES</div>
+            <div class="detail-content uppercase">
+                Design System<br>
+                Art Direction<br>
+                Photo Direction<br>
+                Campaign Toolkit
+            </div>
+        </div>
+
+        <div class="detail-column">
+            <div class="detail-title">OVERVIEW</div>
+            <div class="detail-content">
+                After all the lockdowns, stalled growth, and an uncertain future... CNY is a special moment of family gathering post-2022. In this project, we want to use our special CNY&MD GWP items to Inspire Families and communities to play together, especially when all these items are the majority of Chinese people's mementos of their childhood.
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERÍA SECUNDARIA -->
+    <section class="project-gallery">
+        <div class="gallery-row">
+            <img src="img/home/imagen (4.5).jpg" alt="Gallery Image 1">
+            <img src="img/home/imagen (4.5).jpg" alt="Gallery Image 2">
+        </div>
+        <img src="img/home/imagen (16.9).jpg" alt="Gallery Image 3">
+    </section>
+
+    <div class="more-link">
+        <a href="index.html">MORE &rarr;</a>
+    </div>
+
+    <!-- FOOTER -->
+    <h2 class="slogan-footer">Debora loves what she does.</h2>
+    <footer>
+        <div>&copy; DEBORA HILL</div>
+        <div>MADRID, ESPAÑA 2024</div>
+    </footer>
+
+</body>
+</html>
