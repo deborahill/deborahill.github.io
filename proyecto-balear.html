@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DEBORA - Proyecto</title>
+    <title>DEBORA HILL - Balear</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap');
 
@@ -67,9 +67,6 @@
         .nav-center {
             flex: 1;
             text-align: center;
-            font-size: 2rem;
-            font-weight: 500;
-            letter-spacing: 0.05em;
         }
 
         /* --- IMAGEN PRINCIPAL (HERO) --- */
@@ -86,7 +83,7 @@
         /* --- DETALLES DEL PROYECTO (3 COLUMNAS) --- */
         .project-details {
             display: grid;
-            grid-template-columns: 1fr 2fr 3fr; /* Proporción de las columnas */
+            grid-template-columns: 1fr 2fr 3fr;
             gap: 3rem;
             padding: 4rem 3rem;
             border-bottom: 1px solid var(--border-color);
@@ -106,7 +103,11 @@
         .detail-content {
             font-size: 1.15rem;
             line-height: 1.5;
-            text-transform: none; /* En la web original, los textos descriptivos no van en mayúsculas */
+            text-transform: none; 
+        }
+
+        .detail-content p {
+            margin-bottom: 1.5rem;
         }
         
         .detail-content.uppercase {
@@ -143,7 +144,7 @@
         .slogan-footer {
             text-align: right;
             font-size: clamp(3rem, 6vw, 6rem);
-            color: rgba(255, 255, 255, 0.06); /* Texto gigante casi transparente */
+            color: rgba(255, 255, 255, 0.06);
             padding: 3rem;
             border-top: 1px solid var(--border-color);
             border-bottom: 1px solid var(--border-color);
@@ -169,18 +170,18 @@
 </head>
 <body>
 
-<!-- CABECERA -->
+    <!-- CABECERA -->
     <header>
         <div class="nav-left">
-            <!-- Llevan a la portada y a una futura página -->
             <a href="index.html">WORKS</a>
             <a href="my-own-brief.html">MY OWN BRIEF</a>
         </div>
         <div class="nav-center">
-            <a href="index.html">DEBORA</a>
+            <a href="index.html">
+                <img src="img/logo-dh.png" alt="Debora Hill Logo" style="height: 30px; width: auto;">
+            </a>
         </div>
         <div class="nav-right">
-            <!-- Lleva a la futura página About y abre el correo -->
             <a href="about.html">ABOUT</a>
             <a href="mailto:deborahillert@gmail.com">CONTACT</a>
         </div>
@@ -188,41 +189,42 @@
 
     <!-- IMAGEN PRINCIPAL -->
     <section class="project-hero">
-        <img src="img/home/imagen (16.9).jpg" alt="Hero Image">
+        <img src="img/PROYECTO_1_BALEAR/BALEAR_1.jpg" alt="Balear Image 1">
     </section>
 
     <!-- DETALLES (3 COLUMNAS) -->
     <section class="project-details">
         <div class="detail-column">
             <div class="detail-title">CLIENT</div>
-            <div class="detail-content uppercase">NIKE GWP</div>
+            <div class="detail-content uppercase">BALEAR</div>
         </div>
         
         <div class="detail-column">
             <div class="detail-title">SERVICES</div>
             <div class="detail-content uppercase">
-                Design System<br>
-                Art Direction<br>
-                Photo Direction<br>
-                Campaign Toolkit
+                BRAND IDENTITY<br>
+                ART DIRECTION<br>
+                STORYTELLING
             </div>
         </div>
 
         <div class="detail-column">
             <div class="detail-title">OVERVIEW</div>
             <div class="detail-content">
-                After all the lockdowns, stalled growth, and an uncertain future... CNY is a special moment of family gathering post-2022. In this project, we want to use our special CNY&MD GWP items to Inspire Families and communities to play together, especially when all these items are the majority of Chinese people's mementos of their childhood.
+                <p>For Restaurante Balear, I developed the brand identity holistically, from logo design to a storytelling approach aligned with its values and culinary universe, highlighting product quality and recipes inspired by the Balearic Islands.</p>
+                <p>Para Restaurante Balear construimos su identidad de forma integral, desde el diseño del logotipo hasta un storytelling alineado con sus valores y su universo gastronómico, destacando la calidad del producto y sus recetas inspiradas en las Baleares.</p>
             </div>
         </div>
     </section>
 
     <!-- GALERÍA SECUNDARIA -->
     <section class="project-gallery">
+        <img src="img/PROYECTO_1_BALEAR/BALEAR_2.jpg" alt="Balear Image 2">
         <div class="gallery-row">
-            <img src="img/home/imagen (4.5).jpg" alt="Gallery Image 1">
-            <img src="img/home/imagen (4.5).jpg" alt="Gallery Image 2">
+            <img src="img/PROYECTO_1_BALEAR/BALEAR_3.jpg" alt="Balear Image 3">
+            <img src="img/PROYECTO_1_BALEAR/BALEAR_4.jpg" alt="Balear Image 4">
         </div>
-        <img src="img/home/imagen (16.9).jpg" alt="Gallery Image 3">
+        <img src="img/PROYECTO_1_BALEAR/BALEAR_5.jpg" alt="Balear Image 5">
     </section>
 
     <div class="more-link">

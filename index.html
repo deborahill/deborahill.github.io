@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DEBORA - Portfolio</title>
+    <title>DEBORA HILL - Portfolio</title>
     <style>
-        /* Tipografía Space Grotesk para mantener el estilo geométrico y los ceros tachados */
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap');
 
         :root {
@@ -68,9 +67,6 @@
         .nav-center {
             flex: 1;
             text-align: center;
-            font-size: 2rem;
-            font-weight: 500;
-            letter-spacing: 0.05em;
         }
 
         /* --- HERO --- */
@@ -85,6 +81,15 @@
             line-height: 1.2;
             max-width: 900px;
             margin: 0 auto;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 800px;
+            margin: 2rem auto 0;
+            text-transform: none; /* El texto de introducción no va en mayúsculas */
+            line-height: 1.6;
         }
 
         /* --- CUADRÍCULA DE PROYECTOS --- */
@@ -152,33 +157,37 @@
             .nav-left, .nav-right { justify-content: center; gap: 1.5rem; }
             .grid { grid-template-columns: 1fr; }
             .projects-container { padding: 0 1.5rem 2rem 1.5rem; }
-            .hero h1 { font-size: 2rem; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1rem; }
         }
     </style>
 </head>
 <body>
 
     <!-- CABECERA -->
-
     <header>
         <div class="nav-left">
-            <!-- Llevan a la portada y a una futura página -->
             <a href="index.html">WORKS</a>
             <a href="my-own-brief.html">MY OWN BRIEF</a>
         </div>
+        
         <div class="nav-center">
-            <a href="index.html">DEBORA</a>
+            <a href="index.html">
+                <img src="img/logo-dh.png" alt="Debora Hill Logo" style="height: 30px; width: auto;">
+            </a>
         </div>
+
         <div class="nav-right">
-            <!-- Lleva a la futura página About y abre el correo -->
             <a href="about.html">ABOUT</a>
             <a href="mailto:deborahillert@gmail.com">CONTACT</a>
         </div>
     </header>
 
-    <!-- ESLOGAN PRINCIPAL -->
+    <!-- ESLOGAN Y TEXTO PRINCIPAL -->
     <section class="hero">
         <h1>DESIGNING FROM OBSERVATION<br>INTUITION AND IMPULSE</h1>
+        <!-- He añadido el texto de la cabecera del PDF aquí -->
+        <p>Débora Hillert. Senior Art Director based in Madrid. I create visual worlds for brands and campaigns, focused on craft and visual storytelling. I believe in saying more with less.</p>
     </section>
 
     <!-- PROYECTOS -->
@@ -186,50 +195,92 @@
         <div class="grid">
             
             <!-- Proyecto 1 -->
-            <a href="proyecto.html" class="project-item">
-                <div class="project-title">PROJECT ONE - ART DIRECTION</div>
+            <a href="proyecto-balear.html" class="project-item">
+                <div class="project-title">BALEAR - BRAND IDENTITY</div>
                 <div class="project-image">
-                    <img src="img/home/imagen (4.5).jpg" alt="Proyecto 1">
+                    <img src="img/PROYECTO_1_BALEAR/BALEAR_home.jpg" alt="Balear">
                 </div>
             </a>
 
             <!-- Proyecto 2 -->
-            <a href="proyecto.html" class="project-item">
-                <div class="project-title">PROJECT TWO - BRAND IDENTITY</div>
+            <a href="proyecto-zoco.html" class="project-item">
+                <div class="project-title">ZOCO - ART DIRECTION</div>
                 <div class="project-image">
-                    <img src="img/home/imagen (4.5).jpg" alt="Proyecto 2">
+                    <!-- Como en Zoco no subiste imagen "home", asumo que la 1 es la portada. Cámbialo si es otra -->
+                    <img src="img/PROYECTO_2_ZOCO/ZOCO_1.jpg" alt="Zoco">
                 </div>
             </a>
 
             <!-- Proyecto 3 -->
-            <a href="proyecto.html" class="project-item">
-                <div class="project-title">PROJECT THREE - SPATIAL DESIGN</div>
+            <a href="proyecto-ginos.html" class="project-item">
+                <div class="project-title">GINOS - ART DIRECTION</div>
                 <div class="project-image">
-                    <img src="img/home/imagen (4.5).jpg" alt="Proyecto 3">
+                    <img src="img/PROYECTO_3_GINOS/GINOS_home.jpg" alt="Ginos">
                 </div>
             </a>
 
             <!-- Proyecto 4 -->
-            <a href="proyecto.html" class="project-item">
-                <div class="project-title">PROJECT FOUR - PHOTOGRAPHY</div>
+            <a href="proyecto-skinjoy.html" class="project-item">
+                <div class="project-title">SKIN&JOY - BRAND IDENTITY</div>
                 <div class="project-image">
-                    <img src="img/home/imagen (4.5).jpg" alt="Proyecto 4">
+                    <img src="img/PROYECTO_4_SKINJOY/SKINJOY_home.jpg" alt="Skin&Joy">
                 </div>
             </a>
 
             <!-- Proyecto 5 -->
-            <a href="proyecto.html" class="project-item">
-                <div class="project-title">PROJECT FIVE - CAMPAIGN</div>
+            <a href="proyecto-bullpadel.html" class="project-item">
+                <div class="project-title">BULLPADEL - ART DIRECTION</div>
                 <div class="project-image">
-                    <img src="img/home/imagen (4.5).jpg" alt="Proyecto 5">
+                    <img src="img/PROYECTO_5_BULLPADEL/BULLPADEL_home.jpg" alt="Bullpadel">
                 </div>
             </a>
 
             <!-- Proyecto 6 -->
-            <a href="proyecto.html" class="project-item">
-                <div class="project-title">PROJECT SIX - EDITORIAL</div>
+            <a href="proyecto-grindr.html" class="project-item">
+                <div class="project-title">GRINDR - ART DIRECTION</div>
                 <div class="project-image">
-                    <img src="img/home/imagen (4.5).jpg" alt="Proyecto 6">
+                    <img src="img/PROYECTO_6_GRINDR/GRINDR_home.jpg" alt="Grindr">
+                </div>
+            </a>
+
+            <!-- Proyecto 7 -->
+            <a href="proyecto-fotocasa.html" class="project-item">
+                <div class="project-title">FOTOCASA - CONCEPT - ART DIRECTION</div>
+                <div class="project-image">
+                    <img src="img/PROYECTO_7_FOTOCASA/FOTOCASA_home.jpg" alt="Fotocasa">
+                </div>
+            </a>
+
+            <!-- Proyecto 8 -->
+            <a href="proyecto-wallapop.html" class="project-item">
+                <div class="project-title">WALLAPOP - ART DIRECTION</div>
+                <div class="project-image">
+                    <img src="img/PROYECTO_8_WALLAPOP/WALLAPOP_home.jpg" alt="Wallapop">
+                </div>
+            </a>
+
+            <!-- Proyecto 9 -->
+            <a href="proyecto-beefeater.html" class="project-item">
+                <div class="project-title">BEEFEATER - ART DIRECTION</div>
+                <div class="project-image">
+                    <img src="img/PROYECTO_9_BEEFEATER/BEEFEATER_home.jpg" alt="Beefeater">
+                </div>
+            </a>
+
+            <!-- Proyecto 10 -->
+            <a href="proyecto-halo.html" class="project-item">
+                <div class="project-title">HALO - BRAND IDENTITY</div>
+                <div class="project-image">
+                    <img src="img/PROYECTO_10_HALO/HALO_home.jpg" alt="Halo">
+                </div>
+            </a>
+
+            <!-- Proyecto 11 -->
+            <a href="proyecto-aceites.html" class="project-item">
+                <div class="project-title">ACEITES DE ESPAÑA - ART DIRECTION</div>
+                <div class="project-image">
+                    <!-- Falta la imagen home en tu listado, asumo que es ACEITES_1.jpg -->
+                    <img src="img/PROYECTO_11_ACEITES/ACEITES_1.jpg" alt="Aceites de España">
                 </div>
             </a>
 
