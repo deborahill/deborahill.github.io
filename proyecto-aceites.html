@@ -6,7 +6,7 @@
     <title>DEBORA HILLERT - Aceites de España</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap');
-        :root { --bg-color: rgba(0, 0, 0, 0.95); --text-main: rgba(255, 255, 255, 0.85); --text-muted: rgba(132, 132, 132, 0.85); --border-color: rgba(255, 255, 255, 0.2); --font-main: 'Space Grotesk', Helvetica, Arial, sans-serif; }
+        :root { --bg-color: #000000; --text-main: rgba(255, 255, 255, 0.85); --text-muted: rgba(132, 132, 132, 0.85); --border-color: rgba(255, 255, 255, 0.2); --font-main: 'Space Grotesk', Helvetica, Arial, sans-serif; }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { background-color: var(--bg-color); color: var(--text-main); font-family: var(--font-main); text-transform: uppercase; font-variant-numeric: slashed-zero; -webkit-font-smoothing: antialiased; }
         a { color: inherit; text-decoration: none; transition: opacity 0.3s ease; }
@@ -25,7 +25,7 @@
         .detail-content p { margin-bottom: 1.5rem; }
         .detail-content.uppercase { text-transform: uppercase; }
         .project-gallery { padding: 4rem 3rem; display: flex; flex-direction: column; gap: 1.5rem; }
-        .project-gallery img { width: 100%; height: auto; display: block; object-fit: cover; }
+        .project-gallery img { width: 100%; height: auto; display: block; object-fit: contain; }
         .slogan-footer { text-align: right; font-size: clamp(3rem, 6vw, 6rem); color: rgba(255, 255, 255, 0.05); padding: 4rem 3rem; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); line-height: 1.1; font-weight: 400; min-height: 150px; }
         footer { display: flex; justify-content: space-between; padding: 2rem 3rem; color: var(--text-muted); font-size: 1.12rem; }
         @media (max-width: 768px) { header { flex-direction: column; gap: 1.5rem; padding: 1.5rem; } .project-details { grid-template-columns: 1fr; gap: 3rem; padding: 2rem 1.5rem; } .project-hero, .project-gallery { padding-left: 1.5rem; padding-right: 1.5rem; } }
@@ -34,7 +34,7 @@
 <body>
     <header>
         <div class="nav-left"><a href="index.html">WORKS</a><a href="my-own-brief.html">MY OWN BRIEF</a></div>
-        <div class="nav-center"><a href="index.html"><img src="img/logo-dh.png" alt="Debora Hillert Logo" style="height: 30px; width: auto;"></a></div>
+        <div class="nav-center"><a href="index.html"><img src="img/logo-dh.png" alt="Debora Hillert Logo" style="height: 55px; width: auto;"></a></div>
         <div class="nav-right"><a href="about.html">ABOUT</a><a href="mailto:deborahillert@gmail.com">CONTACT</a></div>
     </header>
     <section class="project-hero">
@@ -48,17 +48,15 @@
         <div class="detail-column">
             <div class="detail-title">OVERVIEW</div>
             <div class="detail-content">
-                <p>For Aceites de España, we developed a campaign for Germany aimed at driving sales and increasing brand awareness. Building on the international recognition of Spanish extra virgin olive oil, we crafted a concept rooted in a distinctly Spanish metaphor to convey that this excellence is no coincidence, but the result of a long-standing tradition.</p>
-                <p>As an art direction proposal, we suggested creating an original oil painting as the centerpiece of the campaign, an approach that connected both with the raw material and the language of classical portraiture, positioning Spanish olive oil in the symbolic place it deserves within our culture.</p>
+                <p>For Aceites de España, we developed a campaign in Germany aimed at driving sales and increasing brand awareness, built around the international recognition of Spanish extra virgin olive oil. We created an idea based on a metaphor deeply rooted in our culture, conveying that this excellence is not a coincidence, but the result of a long-standing tradition. As the campaign's visual centerpiece, we proposed an original oil painting, connecting the product with the language of classical portraiture and giving Spanish olive oil the place it deserves within our culture.</p>
                 <br>
-                <p>Para Aceites de España ideamos una campaña para Alemania orientada a impulsar ventas y generar notoriedad de marca. A partir de los reconocimientos internacionales del aceite de oliva virgen español, construimos una idea basada en una metáfora muy nuestra para expresar que esa excelencia no es casual, sino el resultado de una tradición.</p>
-                <p>Como propuesta de dirección de arte, planteamos realizar una pintura al óleo original como pieza central de la campaña. Un recurso que conectaba tanto con la materia prima como con el lenguaje del retrato clásico, situando al aceite español en el lugar simbólico que merece dentro de nuestra cultura.</p>
+                <p>Para Aceites de España ideamos una campaña en Alemania para impulsar ventas y notoriedad de marca, partiendo de los reconocimientos internacionales del aceite de oliva virgen español. Construimos una idea basada en una metáfora muy nuestra para transmitir que esa excelencia no es casual, sino fruto de una tradición. Como eje visual de la campaña, propusimos una pintura al óleo original, conectando la materia prima con el lenguaje del retrato clásico y situando al aceite español en el lugar que merece dentro de nuestra cultura.</p>
             </div>
         </div>
     </section>
     <section class="project-gallery">
-        <img src="img/PROYECTO_11_ACEITES/ACEITES_1.jpg" alt="Aceites 1">
-        <img src="img/PROYECTO_11_ACEITES/ACEITES_2.jpg" alt="Aceites 2">
+        <img src="img/PROYECTO_11_ACEITES/ACEITES_1.webp" alt="Aceites 1">
+        <img src="img/PROYECTO_11_ACEITES/ACEITES_2.webp" alt="Aceites 2">
     </section>
     <h2 class="slogan-footer"></h2>
     <footer><div>&copy; DEBORA HILLERT</div><div>MADRID, ESPAÑA 2024</div></footer>
