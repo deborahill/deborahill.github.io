@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DEBORA HILLERT - Wallapop</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
 
         :root {
             --bg-color: #000000;
             --text-main: rgba(255, 255, 255, 0.85);
             --text-muted: rgba(132, 132, 132, 0.85);
             --border-color: rgba(255, 255, 255, 0.2);
-            --font-main: 'Space Grotesk', Helvetica, Arial, sans-serif;
+            --font-main: 'Inter', Helvetica, Arial, sans-serif;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -21,7 +21,6 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             font-family: var(--font-main);
-            text-transform: uppercase;
             font-variant-numeric: slashed-zero;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
@@ -33,9 +32,12 @@
         /* NAVEGACIÓN */
         header {
             display: flex; justify-content: space-between; align-items: center;
-            padding: 2rem 3rem; font-size: 1.1rem; position: sticky; top: 0;
+            padding: 2rem 3rem; font-size: 0.9rem; position: sticky; top: 0;
             background-color: var(--bg-color); z-index: 100;
         }
+        
+        header a { text-transform: uppercase; }
+        
         .nav-left, .nav-right { display: flex; gap: 3rem; flex: 1; }
         .nav-right { justify-content: flex-end; }
         .nav-center { flex: 1; text-align: center; }
@@ -49,16 +51,28 @@
             display: grid; grid-template-columns: 1fr 2fr 3fr; gap: 3rem;
             padding: 4rem 3rem; border-bottom: 1px solid var(--border-color);
         }
-        .detail-column { display: flex; flex-direction: column; gap: 2rem; }
-        .detail-title { color: var(--text-muted); font-size: 1.15rem; }
-        .detail-content { font-size: 1.15rem; line-height: 1.5; text-transform: none; }
+        .detail-column { display: flex; flex-direction: column; gap: 1.5rem; }
+        
+        .detail-title { 
+            color: var(--text-muted); 
+            font-size: 0.95rem; 
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .detail-content { font-size: 0.95rem; line-height: 1.6; }
         .detail-content p { margin-bottom: 1.5rem; }
-        .detail-content.uppercase { text-transform: uppercase; }
 
         /* GALERÍA DINÁMICA */
         .project-gallery { padding: 4rem 3rem; display: flex; flex-direction: column; gap: 1.5rem; }
         .gallery-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-        .project-gallery img { width: 100%; height: auto; display: block; object-fit: contain; }
+        .project-gallery img { 
+            width: 100%; 
+            height: 100%; 
+            max-width: 100%;
+            display: block; 
+            object-fit: cover; 
+        }
 
         /* FOOTER */
         .slogan-footer {
@@ -67,7 +81,11 @@
             border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);
             line-height: 1.1; font-weight: 400; min-height: 150px; 
         }
-        footer { display: flex; justify-content: space-between; padding: 2rem 3rem; color: var(--text-muted); font-size: 1.12rem; }
+        
+        footer { 
+            display: flex; justify-content: space-between; padding: 2rem 3rem; 
+            color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; 
+        }
 
         /* RESPONSIVO */
         @media (max-width: 768px) {
@@ -103,14 +121,14 @@
     <section class="project-details">
         <div class="detail-column">
             <div class="detail-title">CLIENT</div>
-            <div class="detail-content uppercase">WALLAPOP</div>
+            <div class="detail-content">Wallapop</div>
         </div>
         <div class="detail-column">
             <div class="detail-title">SERVICES</div>
-            <div class="detail-content uppercase">
-                PROPOSAL<br>
-                CONCEPT<br>
-                ART DIRECTION
+            <div class="detail-content">
+                Proposal<br>
+                Concept<br>
+                Art Direction
             </div>
         </div>
         <div class="detail-column">
