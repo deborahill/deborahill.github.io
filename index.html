@@ -5,13 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DEBORA HILLERT - Portfolio</title>
     <style>
+        /* Importamos la tipografía exacta de la web de referencia */
+        @font-face {
+            font-family: 'Habitus';
+            font-weight: 300;
+            font-style: normal;
+            src: url('https://ref.digital/_nuxt/habitus-book.C_msFUnG.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'Habitus';
+            font-weight: 500;
+            font-style: normal;
+            src: url('https://ref.digital/_nuxt/habitus-medium.Dp0Voz0Q.woff2') format('woff2');
+        }
+
         :root {
             --bg-color: #000000;
             --text-main: rgba(255, 255, 255, 0.85);
             --text-muted: rgba(132, 132, 132, 0.85);
             --border-color: rgba(255, 255, 255, 0.4);
-            /* Cambiada tipografía a fuente de sistema pura para aspecto brutalista/editorial */
-            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --font-main: 'Habitus', Helvetica, Arial, sans-serif;
         }
 
         * {
@@ -78,29 +91,32 @@
         }
 
         .hero p {
-            font-size: 2.5rem;
-            font-weight: 400;
+            /* Tamaño gigante, tipografía fina, interlineado súper ajustado */
+            font-size: clamp(2.5rem, 5.5vw, 5rem); 
+            font-weight: 300;
             color: var(--text-main);
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
-            line-height: 0.75; /* Interlineado muy apretado */
-            letter-spacing: -0.02em; /* Ligero ajuste para compensar el interlineado */
+            line-height: 0.95; 
+            letter-spacing: -0.03em;
         }
 
-        /* --- CUADRÍCULA DE PROYECTOS --- */
+        /* --- CUADRÍCULA DE PROYECTOS (Restaurada a tu original) --- */
         .projects-container {
             padding: 0 3rem 4rem 3rem;
         }
 
         .grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; 
             gap: 4rem 2rem;
             border-top: 1px solid var(--border-color);
             padding-top: 3rem;
         }
 
         .project-item {
+            width: calc((100% - 4rem) / 3); 
             display: flex;
             flex-direction: column;
             gap: 1rem;
@@ -142,21 +158,20 @@
 
         /* --- RESPONSIVO --- */
         @media (max-width: 1024px) {
-            .grid { grid-template-columns: repeat(2, 1fr); }
+            .project-item { width: calc((100% - 2rem) / 2); } 
         }
 
         @media (max-width: 768px) {
             header { flex-direction: column; gap: 1.5rem; padding: 1.5rem; }
             .nav-left, .nav-right { justify-content: center; gap: 1.5rem; }
-            .grid { grid-template-columns: 1fr; } 
+            .project-item { width: 100%; } 
             .projects-container { padding: 0 1.5rem 2rem 1.5rem; }
-            .hero p { font-size: 1.5rem; line-height: 1.05; } /* Interlineado ligeramente más abierto en móvil para legibilidad */
+            .hero p { font-size: 2.2rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- CABECERA INTACTA -->
     <header>
         <div class="nav-left">
             <a href="index.html">WORKS</a>
@@ -175,17 +190,13 @@
         </div>
     </header>
 
-    <!-- TEXTO PRINCIPAL ACTUALIZADO -->
     <section class="hero">
-        <!-- He añadido el texto extra que faltaba en tu código según la captura -->
         <p>Débora Hillert. Senior Art Director based in Madrid. I create visual worlds for brands and campaigns, focused on craft and visual storytelling. I believe in saying more with less.</p>
     </section>
 
-    <!-- PROYECTOS ORDENADOS SEGÚN PDF -->
     <section class="projects-container">
         <div class="grid">
             
-            <!-- 1. ZOCO -->
             <a href="proyecto-zoco.html" class="project-item">
                 <div class="project-title">ZOCO - ART DIRECTION</div>
                 <div class="project-image">
@@ -193,7 +204,6 @@
                 </div>
             </a>
 
-            <!-- 2. BULLPADEL -->
             <a href="proyecto-bullpadel.html" class="project-item">
                 <div class="project-title">BULLPADEL - ART DIRECTION</div>
                 <div class="project-image">
@@ -201,7 +211,6 @@
                 </div>
             </a>
 
-            <!-- 3. WALLAPOP -->
             <a href="proyecto-wallapop.html" class="project-item">
                 <div class="project-title">WALLAPOP - ART DIRECTION</div>
                 <div class="project-image">
@@ -209,7 +218,6 @@
                 </div>
             </a>
 
-            <!-- 4. BALEAR -->
             <a href="proyecto-balear.html" class="project-item">
                 <div class="project-title">BALEAR - BRAND IDENTITY</div>
                 <div class="project-image">
@@ -217,7 +225,6 @@
                 </div>
             </a>
 
-            <!-- 5. BEEFEATER -->
             <a href="proyecto-beefeater.html" class="project-item">
                 <div class="project-title">BEEFEATER - ART DIRECTION</div>
                 <div class="project-image">
@@ -225,7 +232,6 @@
                 </div>
             </a>
 
-            <!-- 6. GRINDR -->
             <a href="proyecto-grindr.html" class="project-item">
                 <div class="project-title">GRINDR - ART DIRECTION</div>
                 <div class="project-image">
@@ -233,7 +239,6 @@
                 </div>
             </a>
 
-            <!-- 7. GINOS -->
             <a href="proyecto-ginos.html" class="project-item">
                 <div class="project-title">GINOS - ART DIRECTION</div>
                 <div class="project-image">
@@ -241,7 +246,6 @@
                 </div>
             </a>
 
-            <!-- 8. HALO -->
             <a href="proyecto-halo.html" class="project-item">
                 <div class="project-title">HALO - BRAND IDENTITY</div>
                 <div class="project-image">
@@ -249,7 +253,6 @@
                 </div>
             </a>
 
-            <!-- 9. SKIN&JOY -->
             <a href="proyecto-skinjoy.html" class="project-item">
                 <div class="project-title">SKIN&JOY - BRAND IDENTITY</div>
                 <div class="project-image">
@@ -257,7 +260,6 @@
                 </div>
             </a>
 
-            <!-- 10. ACEITES -->
             <a href="proyecto-aceites.html" class="project-item">
                 <div class="project-title">ACEITES DE ESPAÑA - ART DIRECTION</div>
                 <div class="project-image">
@@ -265,7 +267,6 @@
                 </div>
             </a>
 
-            <!-- 11. FOTOCASA -->
             <a href="proyecto-fotocasa.html" class="project-item">
                 <div class="project-title">FOTOCASA - CONCEPT - ART DIRECTION</div>
                 <div class="project-image">
@@ -276,7 +277,6 @@
         </div>
     </section>
 
-    <!-- FOOTER INTACTO -->
     <footer>
         <div>&copy; DEBORA HILLERT</div>
         <div>MADRID, ESPAÑA 2024</div>
