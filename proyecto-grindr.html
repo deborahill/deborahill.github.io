@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DEBORA HILLERT - Grindr</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
 
         :root {
             --bg-color: #000000;
             --text-main: rgba(255, 255, 255, 0.85);
             --text-muted: rgba(132, 132, 132, 0.85);
             --border-color: rgba(255, 255, 255, 0.2);
-            --font-main: 'Space Grotesk', Helvetica, Arial, sans-serif;
+            --font-main: 'Inter', Helvetica, Arial, sans-serif;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -21,7 +21,6 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             font-family: var(--font-main);
-            text-transform: uppercase;
             font-variant-numeric: slashed-zero;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
@@ -33,9 +32,12 @@
         /* NAVEGACIÓN */
         header {
             display: flex; justify-content: space-between; align-items: center;
-            padding: 2rem 3rem; font-size: 1.1rem; position: sticky; top: 0;
+            padding: 2rem 3rem; font-size: 0.9rem; position: sticky; top: 0;
             background-color: var(--bg-color); z-index: 100;
         }
+        
+        header a { text-transform: uppercase; }
+        
         .nav-left, .nav-right { display: flex; gap: 3rem; flex: 1; }
         .nav-right { justify-content: flex-end; }
         .nav-center { flex: 1; text-align: center; }
@@ -49,16 +51,34 @@
             display: grid; grid-template-columns: 1fr 2fr 3fr; gap: 3rem;
             padding: 4rem 3rem; border-bottom: 1px solid var(--border-color);
         }
-        .detail-column { display: flex; flex-direction: column; gap: 2rem; }
-        .detail-title { color: var(--text-muted); font-size: 1.15rem; }
-        .detail-content { font-size: 1.15rem; line-height: 1.5; text-transform: none; }
+        .detail-column { display: flex; flex-direction: column; gap: 1.5rem; }
+        
+        .detail-title { 
+            color: var(--text-muted); 
+            font-size: 0.95rem; 
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .detail-content { font-size: 0.95rem; line-height: 1.6; }
         .detail-content p { margin-bottom: 1.5rem; }
-        .detail-content.uppercase { text-transform: uppercase; }
 
         /* GALERÍA DINÁMICA */
         .project-gallery { padding: 4rem 3rem; display: flex; flex-direction: column; gap: 1.5rem; }
-        .gallery-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-        .project-gallery img { width: 100%; height: auto; display: block; object-fit: contain; }
+        
+        .gallery-row-3 { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 1.5rem; 
+        }
+        
+        .project-gallery img { 
+            width: 100%; 
+            height: 100%; 
+            max-width: 100%;
+            display: block; 
+            object-fit: cover; 
+        }
 
         /* FOOTER */
         .slogan-footer {
@@ -67,7 +87,11 @@
             border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);
             line-height: 1.1; font-weight: 400; min-height: 150px; 
         }
-        footer { display: flex; justify-content: space-between; padding: 2rem 3rem; color: var(--text-muted); font-size: 1.12rem; }
+        
+        footer { 
+            display: flex; justify-content: space-between; padding: 2rem 3rem; 
+            color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; 
+        }
 
         /* RESPONSIVO */
         @media (max-width: 768px) {
@@ -75,7 +99,7 @@
             .nav-left, .nav-right { justify-content: center; gap: 1.5rem; }
             .project-details { grid-template-columns: 1fr; gap: 3rem; padding: 2rem 1.5rem; }
             .project-hero, .project-gallery { padding-left: 1.5rem; padding-right: 1.5rem; }
-            .gallery-row { grid-template-columns: 1fr; }
+            .gallery-row-3 { grid-template-columns: 1fr; }
             .slogan-footer { padding: 3rem 1.5rem; min-height: 100px; }
         }
     </style>
@@ -96,22 +120,23 @@
         </div>
     </header>
 
+    <!-- La Imagen 2 va arriba del todo según el PDF -->
     <section class="project-hero">
-        <img src="img/PROYECTO_6_GRINDR/GRINDR_1.webp" alt="Grindr 1">
+        <img src="img/PROYECTO_6_GRINDR/GRINDR_2.webp" alt="Grindr 2">
     </section>
 
     <section class="project-details">
         <div class="detail-column">
             <div class="detail-title">CLIENT</div>
-            <div class="detail-content uppercase">GRINDR</div>
+            <div class="detail-content">Grindr</div>
         </div>
         <div class="detail-column">
             <div class="detail-title">SERVICES</div>
-            <div class="detail-content uppercase">
-                PROPOSAL<br>
-                ART DIRECTION<br>
-                BRAND IDENTITY<br>
-                CONCEPT
+            <div class="detail-content">
+                Proposal<br>
+                Art Direction<br>
+                Brand Identity<br>
+                Concept
             </div>
         </div>
         <div class="detail-column">
@@ -123,13 +148,17 @@
         </div>
     </section>
 
+    <!-- Galería con el nuevo orden -->
     <section class="project-gallery">
-        <img src="img/PROYECTO_6_GRINDR/GRINDR_2.webp" alt="Grindr 2">
-        <div class="gallery-row">
-            <img src="img/PROYECTO_6_GRINDR/GRINDR_3.webp" alt="Grindr 3">
+        <!-- Imagen 1 a ancho completo -->
+        <img src="img/PROYECTO_6_GRINDR/GRINDR_1.webp" alt="Grindr 1">
+        
+        <!-- Imagen 3 a ancho completo -->
+        <img src="img/PROYECTO_6_GRINDR/GRINDR_3.webp" alt="Grindr 3">
+        
+        <!-- Imágenes 4, 5 y 6 en una misma fila de 3 -->
+        <div class="gallery-row-3">
             <img src="img/PROYECTO_6_GRINDR/GRINDR_4.webp" alt="Grindr 4">
-        </div>
-        <div class="gallery-row">
             <img src="img/PROYECTO_6_GRINDR/GRINDR_5.webp" alt="Grindr 5">
             <img src="img/PROYECTO_6_GRINDR/GRINDR_6.webp" alt="Grindr 6">
         </div>
