@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DEBORA HILLERT - Portfolio</title>
+    <title>Débora Hillert - Art Director</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
 
         :root {
             --bg-color: #000000;
             --text-main: rgba(255, 255, 255, 0.85);
             --text-muted: rgba(132, 132, 132, 0.85);
             --border-color: rgba(255, 255, 255, 0.4);
-            --font-main: 'Space Grotesk', Helvetica, Arial, sans-serif;
+            --font-main: 'Inter', Helvetica, Arial, sans-serif; 
         }
 
         * {
@@ -25,7 +25,6 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             font-family: var(--font-main);
-            text-transform: uppercase;
             font-variant-numeric: slashed-zero;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
@@ -47,7 +46,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 2rem 3rem;
-            font-size: 1.1rem;
+            font-size: 0.9rem; /* Menú un poco más pequeño */
             position: sticky;
             top: 0;
             background-color: var(--bg-color);
@@ -58,6 +57,10 @@
             display: flex;
             gap: 3rem;
             flex: 1;
+        }
+        
+        .nav-left a, .nav-right a {
+            text-transform: uppercase;
         }
 
         .nav-right {
@@ -75,21 +78,13 @@
             padding: 8rem 2rem;
         }
 
-        .hero h1 {
-            font-size: 3.5rem;
+        .hero p {
+            font-size: 2.2rem; /* Texto principal mucho más grande */
             font-weight: 400;
-            line-height: 1.2;
+            color: var(--text-main);
             max-width: 900px;
             margin: 0 auto;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            max-width: 800px;
-            margin: 2rem auto 0;
-            text-transform: none;
-            line-height: 1.6;
+            line-height: 1.1; /* Interlineado muy reducido */
         }
 
         /* --- CUADRÍCULA DE PROYECTOS --- */
@@ -116,17 +111,17 @@
             color: var(--text-muted);
             font-size: 0.95rem;
             letter-spacing: 0.02em;
+            text-transform: uppercase;
         }
 
         .project-image {
             width: 100%;
             overflow: hidden;
-            /* Hemos eliminado el aspect-ratio y el color de fondo gris */
         }
 
         .project-image img {
             width: 100%;
-            height: auto; /* La altura se adapta automáticamente a la foto */
+            height: auto; 
             display: block;
             transition: opacity 0.3s ease;
         }
@@ -141,8 +136,9 @@
             justify-content: space-between;
             padding: 2rem 3rem;
             color: var(--text-muted);
-            font-size: 1.12rem;
+            font-size: 0.9rem;
             border-top: 1px solid var(--border-color);
+            text-transform: uppercase;
         }
 
         /* --- RESPONSIVO --- */
@@ -155,77 +151,44 @@
             .nav-left, .nav-right { justify-content: center; gap: 1.5rem; }
             .grid { grid-template-columns: 1fr; }
             .projects-container { padding: 0 1.5rem 2rem 1.5rem; }
-            .hero h1 { font-size: 2.5rem; }
-            .hero p { font-size: 1rem; }
+            .hero p { font-size: 1.5rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- CABECERA -->
     <header>
         <div class="nav-left">
-            <a href="index.html">WORKS</a>
-            <a href="my-own-brief.html">MY OWN BRIEF</a>
+            <a href="index.html">WORK</a>
+            <a href="about.html">ABOUT</a>
         </div>
-        
         <div class="nav-center">
             <a href="index.html">
-                <img src="img/logo-dh.png" alt="Debora Hill Logo" style="height: 55px; width: auto;">
+                <img src="img/logo.webp" alt="Débora Hillert" style="height: 45px; width: auto;">
             </a>
         </div>
-
         <div class="nav-right">
-            <a href="about.html">ABOUT</a>
-            <a href="mailto:deborahillert@gmail.com">CONTACT</a>
+            <a href="mailto:deborahillert@gmail.com">EMAIL</a>
+            <a href="https://linkedin.com/in/tu-perfil" target="_blank">LINKEDIN</a>
         </div>
     </header>
 
-<!-- TEXTO PRINCIPAL -->
-    <section class="hero" style="padding: 6rem 2rem;">
-        <p style="font-size: 2rem; color: var(--text-main); max-width: 1000px; margin: 0 auto; text-transform: none; line-height: 1.5; font-weight: 400;">
-            Débora Hillert. Senior Art Director based in Madrid. I create visual worlds for brands and campaigns, focused on craft and visual storytelling. I believe in saying more with less.
-        </p>
+    <section class="hero">
+        <p>Débora Hillert. Senior Art Director based in Madrid. I create visual worlds for brands and campaigns, focused on craft and visual storytelling.</p>
     </section>
 
-    <!-- PROYECTOS -->
     <section class="projects-container">
         <div class="grid">
             
-            <!-- Proyecto 1 -->
-            <a href="proyecto-balear.html" class="project-item">
-                <div class="project-title">BALEAR - BRAND IDENTITY</div>
-                <div class="project-image">
-                    <img src="img/PROYECTO_1_BALEAR/BALEAR_home.webp" alt="Balear">
-                </div>
-            </a>
-
-            <!-- Proyecto 2 -->
+            <!-- 1. ZOCO -->
             <a href="proyecto-zoco.html" class="project-item">
                 <div class="project-title">ZOCO - ART DIRECTION</div>
                 <div class="project-image">
-                    <!-- Como en Zoco no subiste imagen "home", asumo que la 1 es la portada. Cámbialo si es otra -->
                     <img src="img/PROYECTO_2_ZOCO/ZOCO_home.webp" alt="Zoco">
                 </div>
             </a>
 
-            <!-- Proyecto 3 -->
-            <a href="proyecto-ginos.html" class="project-item">
-                <div class="project-title">GINOS - ART DIRECTION</div>
-                <div class="project-image">
-                    <img src="img/PROYECTO_3_GINOS/GINOS_home.webp" alt="Ginos">
-                </div>
-            </a>
-
-            <!-- Proyecto 4 -->
-            <a href="proyecto-skinjoy.html" class="project-item">
-                <div class="project-title">SKIN&JOY - BRAND IDENTITY</div>
-                <div class="project-image">
-                    <img src="img/PROYECTO_4_SKINJOY/SKINJOY_home.webp" alt="Skin&Joy">
-                </div>
-            </a>
-
-            <!-- Proyecto 5 -->
+            <!-- 2. BULLPADEL -->
             <a href="proyecto-bullpadel.html" class="project-item">
                 <div class="project-title">BULLPADEL - ART DIRECTION</div>
                 <div class="project-image">
@@ -233,23 +196,7 @@
                 </div>
             </a>
 
-            <!-- Proyecto 6 -->
-            <a href="proyecto-grindr.html" class="project-item">
-                <div class="project-title">GRINDR - ART DIRECTION</div>
-                <div class="project-image">
-                    <img src="img/PROYECTO_6_GRINDR/GRINDR_home.webp" alt="Grindr">
-                </div>
-            </a>
-
-            <!-- Proyecto 7 -->
-            <a href="proyecto-fotocasa.html" class="project-item">
-                <div class="project-title">FOTOCASA - CONCEPT - ART DIRECTION</div>
-                <div class="project-image">
-                    <img src="img/PROYECTO_7_FOTOCASA/FOTOCASA_home.webp" alt="Fotocasa">
-                </div>
-            </a>
-
-            <!-- Proyecto 8 -->
+            <!-- 3. WALLAPOP -->
             <a href="proyecto-wallapop.html" class="project-item">
                 <div class="project-title">WALLAPOP - ART DIRECTION</div>
                 <div class="project-image">
@@ -257,7 +204,15 @@
                 </div>
             </a>
 
-            <!-- Proyecto 9 -->
+            <!-- 4. BALEAR -->
+            <a href="proyecto-balear.html" class="project-item">
+                <div class="project-title">BALEAR - BRAND IDENTITY</div>
+                <div class="project-image">
+                    <img src="img/PROYECTO_1_BALEAR/BALEAR_home.webp" alt="Balear">
+                </div>
+            </a>
+
+            <!-- 5. BEEFEATER -->
             <a href="proyecto-beefeater.html" class="project-item">
                 <div class="project-title">BEEFEATER - ART DIRECTION</div>
                 <div class="project-image">
@@ -265,7 +220,23 @@
                 </div>
             </a>
 
-            <!-- Proyecto 10 -->
+            <!-- 6. GRINDR -->
+            <a href="proyecto-grindr.html" class="project-item">
+                <div class="project-title">GRINDR - ART DIRECTION</div>
+                <div class="project-image">
+                    <img src="img/PROYECTO_6_GRINDR/GRINDR_home.webp" alt="Grindr">
+                </div>
+            </a>
+
+            <!-- 7. GINOS -->
+            <a href="proyecto-ginos.html" class="project-item">
+                <div class="project-title">GINOS - ART DIRECTION</div>
+                <div class="project-image">
+                    <img src="img/PROYECTO_3_GINOS/GINOS_home.webp" alt="Ginos">
+                </div>
+            </a>
+
+            <!-- 8. HALO -->
             <a href="proyecto-halo.html" class="project-item">
                 <div class="project-title">HALO - BRAND IDENTITY</div>
                 <div class="project-image">
@@ -273,22 +244,39 @@
                 </div>
             </a>
 
-            <!-- Proyecto 11 -->
+            <!-- 9. SKIN&JOY -->
+            <a href="proyecto-skinjoy.html" class="project-item">
+                <div class="project-title">SKIN&JOY - BRAND IDENTITY</div>
+                <div class="project-image">
+                    <img src="img/PROYECTO_4_SKINJOY/SKINJOY_home.webp" alt="Skin&Joy">
+                </div>
+            </a>
+
+            <!-- 10. ACEITES -->
             <a href="proyecto-aceites.html" class="project-item">
                 <div class="project-title">ACEITES DE ESPAÑA - ART DIRECTION</div>
                 <div class="project-image">
-                    <!-- Falta la imagen home en tu listado, asumo que es ACEITES_1.webp -->
-                    <img src="img/PROYECTO_11_ACEITES/ACEITES_1.webp" alt="Aceites de España">
+                    <img src="img/PROYECTO_11_ACEITES/ACEITES_home.webp" alt="Aceites">
+                </div>
+            </a>
+
+            <!-- 11. FOTOCASA -->
+            <a href="proyecto-fotocasa.html" class="project-item">
+                <div class="project-title">FOTOCASA - CONCEPT - ART DIRECTION</div>
+                <div class="project-image">
+                    <img src="img/PROYECTO_7_FOTOCASA/FOTOCASA_home.webp" alt="Fotocasa">
                 </div>
             </a>
 
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
-        <div>&copy; DEBORA HILLERT</div>
-        <div>MADRID, ESPAÑA 2024</div>
+        <div>© 2024 DÉBORA HILLERT. ALL RIGHTS RESERVED.</div>
+        <div style="text-align: right;">
+            <a href="mailto:deborahillert@gmail.com">DEBORAHILLERT@GMAIL.COM</a><br>
+            +34 672 242 643
+        </div>
     </footer>
 
 </body>
