@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DEBORA HILLERT - Zoco</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
 
         :root {
             --bg-color: #000000;
             --text-main: rgba(255, 255, 255, 0.85);
             --text-muted: rgba(132, 132, 132, 0.85);
             --border-color: rgba(255, 255, 255, 0.2);
-            --font-main: 'Space Grotesk', Helvetica, Arial, sans-serif;
+            --font-main: 'Inter', Helvetica, Arial, sans-serif;
         }
 
         * {
@@ -25,7 +25,6 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             font-family: var(--font-main);
-            text-transform: uppercase;
             font-variant-numeric: slashed-zero;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
@@ -47,11 +46,15 @@
             justify-content: space-between;
             align-items: center;
             padding: 2rem 3rem;
-            font-size: 1.1rem;
+            font-size: 0.9rem; /* Reducido 2 pts */
             position: sticky;
             top: 0;
             background-color: var(--bg-color);
             z-index: 100;
+        }
+
+        header a {
+            text-transform: uppercase;
         }
 
         .nav-left, .nav-right {
@@ -92,36 +95,35 @@
         .detail-column {
             display: flex;
             flex-direction: column;
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .detail-title {
             color: var(--text-muted);
-            font-size: 1.15rem;
+            font-size: 0.95rem; /* Reducido 2 pts */
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         .detail-content {
-            font-size: 1.15rem;
-            line-height: 1.5;
-            text-transform: none; 
+            font-size: 0.95rem; /* Reducido 2 pts */
+            line-height: 1.6;
+            text-transform: none; /* Todo en minúscula/normal */
         }
 
         .detail-content p {
             margin-bottom: 1.5rem;
         }
-        
-        .detail-content.uppercase {
-            text-transform: uppercase;
-        }
 
         .team-credits {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--text-muted);
             text-transform: uppercase;
             margin-top: 2rem;
+            line-height: 1.5;
         }
 
-        /* --- GALERÍA INFERIOR (CON CUADRÍCULA DINÁMICA) --- */
+        /* --- GALERÍA INFERIOR --- */
         .project-gallery {
             padding: 4rem 3rem;
             display: flex;
@@ -139,7 +141,7 @@
             width: 100%;
             height: auto;
             display: block;
-            object-fit: contain;
+            object-fit: cover;
         }
 
         /* --- FOOTER ESPACIO VACÍO --- */
@@ -160,7 +162,8 @@
             justify-content: space-between;
             padding: 2rem 3rem;
             color: var(--text-muted);
-            font-size: 1.12rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
         }
 
         /* --- RESPONSIVO --- */
@@ -204,15 +207,13 @@
     <section class="project-details">
         <div class="detail-column">
             <div class="detail-title">CLIENT</div>
-            <div class="detail-content uppercase">ZOCO</div>
+            <div class="detail-content">Zoco</div>
         </div>
         
         <div class="detail-column">
             <div class="detail-title">SERVICES</div>
-            <div class="detail-content uppercase">
-                ART DIRECTION<br>
-                CONCEPT<br>
-                STORYTELLING
+            <div class="detail-content">
+                Art Direction, Concept, Storytelling
             </div>
         </div>
 
@@ -220,7 +221,7 @@
             <div class="detail-title">OVERVIEW</div>
             <div class="detail-content">
                 <p>The challenge was to rejuvenate the image of Pacharán Zoco and connect with a younger generation without losing its essence. Instead of hiding its perception as a traditional product, we decided to turn its roots into its greatest strength. Inspired by how younger generations are reclaiming and reinterpreting elements of our culture, we highlighted its Navarrese origins, tradition and authenticity. This led to "Esto tan nuestro", a contemporary celebration of everything that makes us unique.</p>
-                <br>
+                
                 <p>El reto era rejuvenecer la imagen de Pacharán Zoco y conectar con una generación más joven, sin renunciar a su esencia. En lugar de esconder su percepción de producto tradicional, decidimos convertir sus raíces en su mayor fortaleza. Inspirándonos en cómo las nuevas generaciones están recuperando y reinterpretando elementos de nuestra cultura, pusimos en valor su origen navarro, su tradición y su autenticidad. Así nació "Esto tan nuestro", una reivindicación contemporánea de todo aquello que nos hace únicos.</p>
                 
                 <div class="team-credits">
@@ -238,10 +239,9 @@
             <img src="img/PROYECTO_2_ZOCO/ZOCO_4.webp" alt="Zoco 4">
         </div>
         <img src="img/PROYECTO_2_ZOCO/ZOCO_5.webp" alt="Zoco 5">
-        <div class="gallery-row">
-            <img src="img/PROYECTO_2_ZOCO/ZOCO_6.webp" alt="Zoco 6">
-            <img src="img/PROYECTO_2_ZOCO/ZOCO_7.gif" alt="Zoco 7">
-        </div>
+        <!-- Las 2 últimas imágenes una debajo de otra (en columna) -->
+        <img src="img/PROYECTO_2_ZOCO/ZOCO_6.webp" alt="Zoco 6">
+        <img src="img/PROYECTO_2_ZOCO/ZOCO_7.gif" alt="Zoco 7">
     </section>
 
     <!-- FOOTER -->
