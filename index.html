@@ -5,18 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DEBORA HILLERT - Portfolio</title>
     <style>
-        /* Importamos la tipografía exacta de la web de referencia */
+        /* Importamos la tipografía exacta de tu captura (Aeonik) */
         @font-face {
-            font-family: 'Habitus';
-            font-weight: 300;
+            font-family: 'Aeonik';
+            font-weight: 400;
             font-style: normal;
-            src: url('https://ref.digital/_nuxt/habitus-book.C_msFUnG.woff2') format('woff2');
-        }
-        @font-face {
-            font-family: 'Habitus';
-            font-weight: 500;
-            font-style: normal;
-            src: url('https://ref.digital/_nuxt/habitus-medium.Dp0Voz0Q.woff2') format('woff2');
+            src: url('https://ref.digital/_nuxt/aeonik-regular.B7F5ivrz.woff2') format('woff2');
         }
 
         :root {
@@ -24,7 +18,7 @@
             --text-main: rgba(255, 255, 255, 0.85);
             --text-muted: rgba(132, 132, 132, 0.85);
             --border-color: rgba(255, 255, 255, 0.4);
-            --font-main: 'Habitus', Helvetica, Arial, sans-serif;
+            --font-main: 'Aeonik', Helvetica, Arial, sans-serif;
         }
 
         * {
@@ -91,32 +85,29 @@
         }
 
         .hero p {
-            /* Tamaño gigante, tipografía fina, interlineado súper ajustado */
-            font-size: clamp(2.5rem, 5.5vw, 5rem); 
-            font-weight: 300;
+            font-size: clamp(2.5rem, 5.5vw, 5.5rem); 
             color: var(--text-main);
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
+            /* Interlineado y espaciado estilo captura */
             line-height: 0.95; 
-            letter-spacing: -0.03em;
+            letter-spacing: -0.04em; 
         }
 
-        /* --- CUADRÍCULA DE PROYECTOS (Restaurada a tu original) --- */
+        /* --- CUADRÍCULA DE PROYECTOS --- */
         .projects-container {
             padding: 0 3rem 4rem 3rem;
         }
 
         .grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center; 
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             gap: 4rem 2rem;
             border-top: 1px solid var(--border-color);
             padding-top: 3rem;
         }
 
         .project-item {
-            width: calc((100% - 4rem) / 3); 
             display: flex;
             flex-direction: column;
             gap: 1rem;
@@ -158,13 +149,13 @@
 
         /* --- RESPONSIVO --- */
         @media (max-width: 1024px) {
-            .project-item { width: calc((100% - 2rem) / 2); } 
+            .grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 768px) {
             header { flex-direction: column; gap: 1.5rem; padding: 1.5rem; }
             .nav-left, .nav-right { justify-content: center; gap: 1.5rem; }
-            .project-item { width: 100%; } 
+            .grid { grid-template-columns: 1fr; } 
             .projects-container { padding: 0 1.5rem 2rem 1.5rem; }
             .hero p { font-size: 2.2rem; }
         }
