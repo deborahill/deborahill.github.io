@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DEBORA HILLERT - Balear</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
 
         :root {
             --bg-color: #000000;
             --text-main: rgba(255, 255, 255, 0.85);
             --text-muted: rgba(132, 132, 132, 0.85);
             --border-color: rgba(255, 255, 255, 0.2);
-            --font-main: 'Space Grotesk', Helvetica, Arial, sans-serif;
+            --font-main: 'Inter', Helvetica, Arial, sans-serif;
         }
 
         * {
@@ -25,7 +25,7 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             font-family: var(--font-main);
-            text-transform: uppercase;
+            /* Quitamos el text-transform uppercase para que respete las minúsculas */
             font-variant-numeric: slashed-zero;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
@@ -47,11 +47,15 @@
             justify-content: space-between;
             align-items: center;
             padding: 2rem 3rem;
-            font-size: 1.1rem;
+            font-size: 0.9rem; /* Reducido 2 pts */
             position: sticky;
             top: 0;
             background-color: var(--bg-color);
             z-index: 100;
+        }
+        
+        header a {
+            text-transform: uppercase;
         }
 
         .nav-left, .nav-right {
@@ -92,26 +96,24 @@
         .detail-column {
             display: flex;
             flex-direction: column;
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .detail-title {
             color: var(--text-muted);
-            font-size: 1.15rem;
+            font-size: 0.95rem; /* Reducido 2 pts */
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         .detail-content {
-            font-size: 1.15rem;
-            line-height: 1.5;
-            text-transform: none; 
+            font-size: 0.95rem; /* Reducido 2 pts */
+            line-height: 1.6;
+            text-transform: none; /* Aseguramos minúsculas */
         }
 
         .detail-content p {
             margin-bottom: 1.5rem;
-        }
-        
-        .detail-content.uppercase {
-            text-transform: uppercase;
         }
 
         /* --- GALERÍA INFERIOR (CON CUADRÍCULA DINÁMICA) --- */
@@ -122,9 +124,15 @@
             gap: 1.5rem;
         }
 
-        .gallery-row {
+        .gallery-row-2 {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .gallery-row-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
         }
 
@@ -153,7 +161,8 @@
             justify-content: space-between;
             padding: 2rem 3rem;
             color: var(--text-muted);
-            font-size: 1.12rem;
+            font-size: 0.9rem; /* Reducido */
+            text-transform: uppercase;
         }
 
         /* --- RESPONSIVO --- */
@@ -162,7 +171,7 @@
             .nav-left, .nav-right { justify-content: center; gap: 1.5rem; }
             .project-details { grid-template-columns: 1fr; gap: 3rem; padding: 2rem 1.5rem; }
             .project-hero, .project-gallery { padding-left: 1.5rem; padding-right: 1.5rem; }
-            .gallery-row { grid-template-columns: 1fr; }
+            .gallery-row-2, .gallery-row-3 { grid-template-columns: 1fr; }
             .slogan-footer { padding: 3rem 1.5rem; min-height: 100px; }
         }
     </style>
@@ -197,15 +206,13 @@
     <section class="project-details">
         <div class="detail-column">
             <div class="detail-title">CLIENT</div>
-            <div class="detail-content uppercase">BALEAR</div>
+            <div class="detail-content">Balear</div>
         </div>
         
         <div class="detail-column">
             <div class="detail-title">SERVICES</div>
-            <div class="detail-content uppercase">
-                BRAND IDENTITY<br>
-                ART DIRECTION<br>
-                STORYTELLING
+            <div class="detail-content">
+                Brand Identity, Art Direction, Storytelling
             </div>
         </div>
 
@@ -220,18 +227,29 @@
 
     <!-- GALERÍA DINÁMICA -->
     <section class="project-gallery">
-        <img src="img/PROYECTO_1_BALEAR/BALEAR_2.webp" alt="Balear 2">
-        <div class="gallery-row">
+        
+        <!-- Fotos 2 y 3 en la misma fila -->
+        <div class="gallery-row-2">
+            <img src="img/PROYECTO_1_BALEAR/BALEAR_2.webp" alt="Balear 2">
             <img src="img/PROYECTO_1_BALEAR/BALEAR_3.webp" alt="Balear 3">
-            <img src="img/PROYECTO_1_BALEAR/BALEAR_4.webp" alt="Balear 4">
         </div>
-        <img src="img/PROYECTO_1_BALEAR/BALEAR_5.webp" alt="Balear 5">
-        <div class="gallery-row">
+        
+        <!-- Fotos 4 y 5 en la misma fila -->
+        <div class="gallery-row-2">
+            <img src="img/PROYECTO_1_BALEAR/BALEAR_4.webp" alt="Balear 4">
+            <img src="img/PROYECTO_1_BALEAR/BALEAR_5.webp" alt="Balear 5">
+        </div>
+        
+        <!-- Fotos 6, 7 y 8 en la misma fila -->
+        <div class="gallery-row-3">
             <img src="img/PROYECTO_1_BALEAR/BALEAR_6.webp" alt="Balear 6">
             <img src="img/PROYECTO_1_BALEAR/BALEAR_7.webp" alt="Balear 7">
+            <img src="img/PROYECTO_1_BALEAR/BALEAR_8.webp" alt="Balear 8">
         </div>
-        <img src="img/PROYECTO_1_BALEAR/BALEAR_8.webp" alt="Balear 8">
+
+        <!-- Foto 9 (La he mantenido por si acaso a tamaño completo) -->
         <img src="img/PROYECTO_1_BALEAR/BALEAR_9.webp" alt="Balear 9">
+
     </section>
 
     <!-- FOOTER -->
