@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Débora Hillert - Art Director</title>
+    <title>DEBORA HILLERT - Portfolio</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
 
@@ -12,7 +12,7 @@
             --text-main: rgba(255, 255, 255, 0.85);
             --text-muted: rgba(132, 132, 132, 0.85);
             --border-color: rgba(255, 255, 255, 0.4);
-            --font-main: 'Inter', Helvetica, Arial, sans-serif; 
+            --font-main: 'Inter', Helvetica, Arial, sans-serif;
         }
 
         * {
@@ -46,21 +46,21 @@
             justify-content: space-between;
             align-items: center;
             padding: 2rem 3rem;
-            font-size: 0.9rem; /* Menú un poco más pequeño */
+            font-size: 0.9rem; /* Un poco más pequeño */
             position: sticky;
             top: 0;
             background-color: var(--bg-color);
             z-index: 100;
+        }
+        
+        header a {
+            text-transform: uppercase;
         }
 
         .nav-left, .nav-right {
             display: flex;
             gap: 3rem;
             flex: 1;
-        }
-        
-        .nav-left a, .nav-right a {
-            text-transform: uppercase;
         }
 
         .nav-right {
@@ -79,12 +79,12 @@
         }
 
         .hero p {
-            font-size: 2.2rem; /* Texto principal mucho más grande */
+            font-size: 2.5rem; /* Texto principal más grande */
             font-weight: 400;
             color: var(--text-main);
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
-            line-height: 1.1; /* Interlineado muy reducido */
+            line-height: 1.1; /* Menos interlineado */
         }
 
         /* --- CUADRÍCULA DE PROYECTOS --- */
@@ -138,7 +138,6 @@
             color: var(--text-muted);
             font-size: 0.9rem;
             border-top: 1px solid var(--border-color);
-            text-transform: uppercase;
         }
 
         /* --- RESPONSIVO --- */
@@ -157,26 +156,31 @@
 </head>
 <body>
 
+    <!-- CABECERA INTACTA -->
     <header>
         <div class="nav-left">
-            <a href="index.html">WORK</a>
-            <a href="about.html">ABOUT</a>
+            <a href="index.html">WORKS</a>
+            <a href="my-own-brief.html">MY OWN BRIEF</a>
         </div>
+        
         <div class="nav-center">
             <a href="index.html">
-                <img src="img/logo.webp" alt="Débora Hillert" style="height: 45px; width: auto;">
+                <img src="img/logo-dh.png" alt="Debora Hill Logo" style="height: 55px; width: auto;">
             </a>
         </div>
+
         <div class="nav-right">
-            <a href="mailto:deborahillert@gmail.com">EMAIL</a>
-            <a href="https://linkedin.com/in/tu-perfil" target="_blank">LINKEDIN</a>
+            <a href="about.html">ABOUT</a>
+            <a href="mailto:deborahillert@gmail.com">CONTACT</a>
         </div>
     </header>
 
+    <!-- TEXTO PRINCIPAL ACTUALIZADO -->
     <section class="hero">
         <p>Débora Hillert. Senior Art Director based in Madrid. I create visual worlds for brands and campaigns, focused on craft and visual storytelling.</p>
     </section>
 
+    <!-- PROYECTOS ORDENADOS SEGÚN PDF -->
     <section class="projects-container">
         <div class="grid">
             
@@ -256,7 +260,7 @@
             <a href="proyecto-aceites.html" class="project-item">
                 <div class="project-title">ACEITES DE ESPAÑA - ART DIRECTION</div>
                 <div class="project-image">
-                    <img src="img/PROYECTO_11_ACEITES/ACEITES_home.webp" alt="Aceites">
+                    <img src="img/PROYECTO_11_ACEITES/ACEITES_home.webp" alt="Aceites de España">
                 </div>
             </a>
 
@@ -271,12 +275,10 @@
         </div>
     </section>
 
+    <!-- FOOTER INTACTO -->
     <footer>
-        <div>© 2024 DÉBORA HILLERT. ALL RIGHTS RESERVED.</div>
-        <div style="text-align: right;">
-            <a href="mailto:deborahillert@gmail.com">DEBORAHILLERT@GMAIL.COM</a><br>
-            +34 672 242 643
-        </div>
+        <div>&copy; DEBORA HILLERT</div>
+        <div>MADRID, ESPAÑA 2024</div>
     </footer>
 
 </body>
