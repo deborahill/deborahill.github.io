@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DEBORA HILLERT - Ginos</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
 
         :root {
             --bg-color: #000000;
             --text-main: rgba(255, 255, 255, 0.85);
             --text-muted: rgba(132, 132, 132, 0.85);
             --border-color: rgba(255, 255, 255, 0.2);
-            --font-main: 'Space Grotesk', Helvetica, Arial, sans-serif;
+            --font-main: 'Inter', Helvetica, Arial, sans-serif;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -21,7 +21,6 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             font-family: var(--font-main);
-            text-transform: uppercase;
             font-variant-numeric: slashed-zero;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
@@ -33,9 +32,12 @@
         /* NAVEGACIÓN */
         header {
             display: flex; justify-content: space-between; align-items: center;
-            padding: 2rem 3rem; font-size: 1.1rem; position: sticky; top: 0;
+            padding: 2rem 3rem; font-size: 0.9rem; position: sticky; top: 0;
             background-color: var(--bg-color); z-index: 100;
         }
+        
+        header a { text-transform: uppercase; }
+        
         .nav-left, .nav-right { display: flex; gap: 3rem; flex: 1; }
         .nav-right { justify-content: flex-end; }
         .nav-center { flex: 1; text-align: center; }
@@ -49,16 +51,31 @@
             display: grid; grid-template-columns: 1fr 2fr 3fr; gap: 3rem;
             padding: 4rem 3rem; border-bottom: 1px solid var(--border-color);
         }
-        .detail-column { display: flex; flex-direction: column; gap: 2rem; }
-        .detail-title { color: var(--text-muted); font-size: 1.15rem; }
-        .detail-content { font-size: 1.15rem; line-height: 1.5; text-transform: none; }
+        .detail-column { display: flex; flex-direction: column; gap: 1.5rem; }
+        
+        .detail-title { 
+            color: var(--text-muted); 
+            font-size: 0.95rem; 
+            text-transform: uppercase; 
+            letter-spacing: 0.05em; 
+        }
+        
+        .detail-content { font-size: 0.95rem; line-height: 1.6; text-transform: none; }
         .detail-content p { margin-bottom: 1.5rem; }
-        .detail-content.uppercase { text-transform: uppercase; }
 
         /* GALERÍA DINÁMICA */
         .project-gallery { padding: 4rem 3rem; display: flex; flex-direction: column; gap: 1.5rem; }
-        .gallery-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-        .project-gallery img { width: 100%; height: auto; display: block; object-fit: contain; }
+        
+        .gallery-row-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+        .gallery-row-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+        
+        .project-gallery img { 
+            width: 100%; 
+            height: 100%; 
+            max-width: 100%;
+            display: block; 
+            object-fit: cover; 
+        }
 
         /* FOOTER */
         .slogan-footer {
@@ -67,7 +84,11 @@
             border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);
             line-height: 1.1; font-weight: 400; min-height: 150px; 
         }
-        footer { display: flex; justify-content: space-between; padding: 2rem 3rem; color: var(--text-muted); font-size: 1.12rem; }
+        
+        footer { 
+            display: flex; justify-content: space-between; padding: 2rem 3rem; 
+            color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; 
+        }
 
         /* RESPONSIVO */
         @media (max-width: 768px) {
@@ -75,7 +96,8 @@
             .nav-left, .nav-right { justify-content: center; gap: 1.5rem; }
             .project-details { grid-template-columns: 1fr; gap: 3rem; padding: 2rem 1.5rem; }
             .project-hero, .project-gallery { padding-left: 1.5rem; padding-right: 1.5rem; }
-            .gallery-row { grid-template-columns: 1fr; }
+            .gallery-row-2 { grid-template-columns: 1fr; }
+            .gallery-row-4 { grid-template-columns: repeat(2, 1fr); } /* De 4 columnas pasa a 2 en móvil */
             .slogan-footer { padding: 3rem 1.5rem; min-height: 100px; }
         }
     </style>
@@ -97,17 +119,21 @@
     </header>
 
     <section class="project-hero">
+        <!-- La imagen 1 ya estaba cambiada en tu carpeta por la que no tiene línea roja -->
         <img src="img/PROYECTO_3_GINOS/GINOS_1.webp" alt="Ginos 1">
     </section>
 
     <section class="project-details">
         <div class="detail-column">
             <div class="detail-title">CLIENT</div>
-            <div class="detail-content uppercase">GINOS</div>
+            <div class="detail-content">Ginos</div>
         </div>
         <div class="detail-column">
             <div class="detail-title">SERVICES</div>
-            <div class="detail-content uppercase">ART DIRECTION<br>BRAND IDENTITY</div>
+            <div class="detail-content">
+                Art Direction<br>
+                Brand Identity
+            </div>
         </div>
         <div class="detail-column">
             <div class="detail-title">OVERVIEW</div>
@@ -119,36 +145,52 @@
     </section>
 
     <section class="project-gallery">
-        <img src="img/PROYECTO_3_GINOS/GINOS_2.webp" alt="Ginos 2">
-        <div class="gallery-row">
+        
+        <!-- 2 y 3 en la misma fila -->
+        <div class="gallery-row-2">
+            <img src="img/PROYECTO_3_GINOS/GINOS_2.webp" alt="Ginos 2">
             <img src="img/PROYECTO_3_GINOS/GINOS_3.webp" alt="Ginos 3">
-            <img src="img/PROYECTO_3_GINOS/GINOS_4.webp" alt="Ginos 4">
         </div>
-        <img src="img/PROYECTO_3_GINOS/GINOS_5.gif" alt="Ginos 5">
-        <div class="gallery-row">
+        
+        <!-- 4 y 5 (GIF) en la misma fila -->
+        <div class="gallery-row-2">
+            <img src="img/PROYECTO_3_GINOS/GINOS_4.webp" alt="Ginos 4">
+            <img src="img/PROYECTO_3_GINOS/GINOS_5.gif" alt="Ginos 5">
+        </div>
+        
+        <!-- 6 y 7 emparejadas -->
+        <div class="gallery-row-2">
             <img src="img/PROYECTO_3_GINOS/GINOS_6.webp" alt="Ginos 6">
             <img src="img/PROYECTO_3_GINOS/GINOS_7.webp" alt="Ginos 7">
         </div>
+        
         <img src="img/PROYECTO_3_GINOS/GINOS_8.webp" alt="Ginos 8">
-        <div class="gallery-row">
+        
+        <!-- 9, 10, 11 y 12 en la misma fila (4 columnas) -->
+        <div class="gallery-row-4">
             <img src="img/PROYECTO_3_GINOS/GINOS_9.webp" alt="Ginos 9">
             <img src="img/PROYECTO_3_GINOS/GINOS_10.webp" alt="Ginos 10">
-        </div>
-        <img src="img/PROYECTO_3_GINOS/GINOS_11.webp" alt="Ginos 11">
-        <div class="gallery-row">
+            <img src="img/PROYECTO_3_GINOS/GINOS_11.webp" alt="Ginos 11">
             <img src="img/PROYECTO_3_GINOS/GINOS_12.webp" alt="Ginos 12">
-            <img src="img/PROYECTO_3_GINOS/GINOS_13.webp" alt="Ginos 13">
         </div>
-        <img src="img/PROYECTO_3_GINOS/GINOS_14.webp" alt="Ginos 14">
-        <div class="gallery-row">
+        
+        <!-- 13 suelta -->
+        <img src="img/PROYECTO_3_GINOS/GINOS_13.webp" alt="Ginos 13">
+        
+        <!-- 14, 15, 16 y 17 en la misma fila (4 columnas) -->
+        <div class="gallery-row-4">
+            <img src="img/PROYECTO_3_GINOS/GINOS_14.webp" alt="Ginos 14">
             <img src="img/PROYECTO_3_GINOS/GINOS_15.webp" alt="Ginos 15">
             <img src="img/PROYECTO_3_GINOS/GINOS_16.webp" alt="Ginos 16">
+            <img src="img/PROYECTO_3_GINOS/GINOS_17.webp" alt="Ginos 17">
         </div>
-        <img src="img/PROYECTO_3_GINOS/GINOS_17.webp" alt="Ginos 17">
-        <div class="gallery-row">
+        
+        <!-- 18 y 19 emparejadas -->
+        <div class="gallery-row-2">
             <img src="img/PROYECTO_3_GINOS/GINOS_18.webp" alt="Ginos 18">
             <img src="img/PROYECTO_3_GINOS/GINOS_19.webp" alt="Ginos 19">
         </div>
+        
     </section>
 
     <h2 class="slogan-footer"></h2>
