@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABOUT - Débora Hillert</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+
+        :root {
+            --bg-color: #000000;
+            --text-main: rgba(255, 255, 255, 0.85);
+            --text-muted: rgba(132, 132, 132, 0.85);
+            --border-color: rgba(255, 255, 255, 0.4);
+            --font-main: 'Inter', Helvetica, Arial, sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            font-variant-numeric: slashed-zero;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a { color: inherit; text-decoration: none; transition: opacity 0.3s ease; }
+        a:hover { opacity: 0.6; }
+
+        /* --- NAVEGACIÓN --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 3rem;
+            font-size: 0.9rem;
+            position: sticky;
+            top: 0;
+            background-color: var(--bg-color);
+            z-index: 100;
+        }
+        header a { text-transform: uppercase; }
+        .nav-left, .nav-right { display: flex; gap: 3rem; flex: 1; }
+        .nav-right { justify-content: flex-end; }
+        .nav-center { flex: 1; text-align: center; }
+
+        /* --- ABOUT CONTENT --- */
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 4rem 2rem 8rem 2rem;
+        }
+
+        .profile-img {
+            width: 200px; /* Tamaño pequeño, como pedía tu hermana */
+            height: auto;
+            margin-bottom: 3rem;
+            display: block;
+        }
+
+        .about-text {
+            max-width: 800px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--text-main);
+            text-align: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .separator {
+            margin: 3rem 0;
+            letter-spacing: 0.5em;
+            color: var(--text-muted);
+        }
+
+        .contact-info {
+            margin-top: 4rem;
+            font-size: 1.1rem;
+            text-align: center;
+            line-height: 1.8;
+        }
+        
+        .contact-info a {
+            display: block;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 2rem 3rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* --- RESPONSIVO --- */
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 1.5rem; padding: 1.5rem; }
+            .nav-left, .nav-right { justify-content: center; gap: 1.5rem; }
+            .profile-img { width: 150px; margin-bottom: 2rem; }
+            .about-text { font-size: 1rem; text-align: left; }
+            .contact-info { text-align: left; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-left">
+            <a href="index.html">WORKS</a>
+            <a href="my-own-brief.html">MY OWN BRIEF</a>
+        </div>
+        <div class="nav-center">
+            <a href="index.html">
+                <img src="img/logo-dh.png" alt="Debora Hill Logo" style="height: 55px; width: auto;">
+            </a>
+        </div>
+        <div class="nav-right">
+            <a href="about.html">ABOUT</a>
+            <a href="mailto:deborahillert@gmail.com">CONTACT</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- ASEGÚRATE DE QUE EL NOMBRE DEL ARCHIVO DE LA FOTO ES EXACTAMENTE ESTE -->
+        <img src="img/about.webp" alt="Débora Hillert" class="profile-img">
+
+        <div class="about-text">
+            <p>More than 11 years working in advertising and art direction, developing campaigns, visual identities and brand worlds for national and international clients.</p>
+            
+            <p>I’ve worked at agencies such as Leo Burnett, Havas Creative and currently Apple Tree, collaborating with brands including NIVEA, Disney, IKEA, Casa del Libro, L’Oréal, Wallapop and Philip Morris, among others.</p>
+            
+            <p>My work focuses on building strong visual narratives through craft, storytelling and thoughtful art direction. I’m especially interested in projects that shape visual identities, redefine brand territories or translate ideas into clear and cohesive visual systems.</p>
+            
+            <p>I hold a degree in Fine Arts and Design, a background that continues to shape the way I approach creativity — balancing concept, aesthetics and visual sensitivity.</p>
+
+            <div class="separator">· · · ·</div>
+
+            <p>Llevo más de 11 años trabajando en publicidad como directora de arte, desarrollando campañas, identidades visuales y universos de marca para clientes nacionales e internacionales.</p>
+
+            <p>He trabajado en agencias como Leo Burnett, Havas Creative y actualmente Apple Tree, colaborando con marcas como NIVEA, Disney, IKEA, Casa del Libro, L’Oréal, Wallapop o Philip Morris, entre otras.</p>
+
+            <p>Mi trabajo se centra en construir narrativas visuales sólidas a través del craft, el storytelling y una dirección de arte cuidada. Me interesan especialmente los proyectos que construyen identidad, redefinen territorios de marca o traducen ideas en sistemas visuales claros y coherentes.</p>
+
+            <p>Soy licenciada en Bellas Artes y Diseño, una formación que sigue marcando mi forma de entender la creatividad, equilibrando concepto, estética y sensibilidad visual.</p>
+        </div>
+
+        <div class="contact-info">
+            <a href="tel:+34672242643">+34 672 242 643</a>
+            <a href="mailto:deborahillert@gmail.com">deborahillert@gmail.com</a>
+        </div>
+    </main>
+
+    <footer>
+        <div>&copy; DEBORA HILLERT</div>
+        <div>MADRID, ESPAÑA 2024</div>
+    </footer>
+
+</body>
+</html>
