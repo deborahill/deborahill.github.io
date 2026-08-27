@@ -5,20 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DEBORA HILLERT - Portfolio</title>
     <style>
-        /* Importamos la tipografía exacta de tu captura (Aeonik) */
-        @font-face {
-            font-family: 'Aeonik';
-            font-weight: 400;
-            font-style: normal;
-            src: url('https://ref.digital/_nuxt/aeonik-regular.B7F5ivrz.woff2') format('woff2');
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&display=swap');
 
         :root {
             --bg-color: #000000;
             --text-main: rgba(255, 255, 255, 0.85);
             --text-muted: rgba(132, 132, 132, 0.85);
             --border-color: rgba(255, 255, 255, 0.4);
-            --font-main: 'Aeonik', Helvetica, Arial, sans-serif;
+            --font-main: 'Space Grotesk', Helvetica, Arial, sans-serif;
         }
 
         * {
@@ -85,11 +79,12 @@
         }
 
         .hero p {
-            font-size: clamp(2.5rem, 5.5vw, 5.5rem); 
+            /* Mantiene el tamaño gigante y el interlineado de la captura */
+            font-size: clamp(2.5rem, 5vw, 4.8rem); 
+            font-weight: 400;
             color: var(--text-main);
             max-width: 1200px;
             margin: 0 auto;
-            /* Interlineado y espaciado estilo captura */
             line-height: 0.95; 
             letter-spacing: -0.04em; 
         }
