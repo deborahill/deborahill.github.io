@@ -74,18 +74,18 @@
 
         /* --- HERO --- */
         .hero {
-            text-align: left; /* Alineado a la izquierda */
-            padding: 8rem 3rem; /* Mismo padding lateral que el menú */
+            text-align: left;
+            padding: 8rem 3rem;
         }
 
         .hero p {
-            /* Aumentamos el tamaño para llenar el espacio sin la última frase */
             font-size: clamp(3rem, 7.5vw, 7rem); 
             font-weight: 400;
             color: var(--text-main);
-            max-width: 100%; /* Ocupa todo el ancho disponible */
-            margin: 0; /* Quitamos el centrado */
-            line-height: 0.95; 
+            max-width: 100%; 
+            margin: 0; 
+            /* Interlineado más agresivo (bajamos de 0.95 a 0.88) */
+            line-height: 0.88; 
             letter-spacing: -0.04em; 
         }
 
