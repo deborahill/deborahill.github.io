@@ -95,8 +95,33 @@
 
         /* RESPONSIVO */
         @media (max-width: 768px) {
-            header { flex-direction: column; gap: 1.5rem; padding: 1.5rem; }
-            .nav-left, .nav-right { justify-content: center; gap: 1.5rem; }
+            header { 
+                display: flex;
+                justify-content: space-between; 
+                padding: 10.5rem 1.25rem 3.5rem 1.25rem; 
+                position: relative;
+            }
+            
+            .nav-left, .nav-right {
+                display: contents; 
+            }
+            
+            .nav-center { 
+                position: absolute; 
+                top: 2.5rem; 
+                left: 50%;
+                transform: translateX(-50%);
+                width: auto;
+            }
+            
+            .nav-center img {
+                height: 75px !important; 
+            }
+            
+            header a {
+                font-size: 0.75rem; 
+                letter-spacing: 0.02em;
+            }
             .project-details { grid-template-columns: 1fr; gap: 3rem; padding: 2rem 1.5rem; }
             .project-hero, .project-gallery { padding-left: 1.5rem; padding-right: 1.5rem; }
             .gallery-row-3 { grid-template-columns: 1fr; }
