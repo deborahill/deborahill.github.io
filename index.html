@@ -40,7 +40,7 @@
             opacity: 0.6;
         }
 
-        /* --- NAVEGACIÓN --- */
+        /* --- NAVEGACIÓN DESKTOP --- */
         header {
             display: flex;
             justify-content: space-between;
@@ -72,7 +72,7 @@
             text-align: center;
         }
 
-        /* --- HERO --- */
+        /* --- HERO DESKTOP --- */
         .hero {
             text-align: left;
             padding: 8rem 3rem;
@@ -84,7 +84,6 @@
             color: var(--text-main);
             max-width: 100%; 
             margin: 0; 
-            /* Interlineado más agresivo (bajamos de 0.95 a 0.88) */
             line-height: 0.88; 
             letter-spacing: -0.04em; 
         }
@@ -142,37 +141,79 @@
             border-top: 1px solid var(--border-color);
         }
 
-        /* --- RESPONSIVO --- */
+        /* --- RESPONSIVO (TABLET / MÓVIL) --- */
         @media (max-width: 1024px) {
             .grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 768px) {
-            header { flex-direction: column; gap: 1.5rem; padding: 1.5rem; }
-            .nav-left, .nav-right { justify-content: center; gap: 1.5rem; }
+            /* Estructura Header calcada a la captura */
+            header { 
+                flex-direction: column; 
+                align-items: center;
+                gap: 2rem; 
+                padding: 2.5rem 1.25rem 1.5rem 1.25rem; 
+            }
+            
+            .nav-center { 
+                order: 1; 
+                width: 100%;
+            }
+            
+            .nav-center img {
+                height: 70px !important; /* Tamaño destacado como en la foto */
+            }
+
+            .nav-container-mobile {
+                order: 2;
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                font-size: 0.75rem;
+                letter-spacing: 0.04em;
+            }
+
+            .nav-left, .nav-right { 
+                display: contents; /* Desmonta los contenedores para alinearlos todos en una sola línea */
+            }
+
+            /* Hero Text para móvil */
+            .hero {
+                padding: 2.5rem 1.25rem 5rem 1.25rem;
+            }
+
+            .hero p { 
+                font-size: clamp(2.3rem, 9vw, 3.2rem); 
+                line-height: 0.9;
+                letter-spacing: -0.04em;
+                text-align: left;
+            }
+
             .grid { grid-template-columns: 1fr; } 
-            .projects-container { padding: 0 1.5rem 2rem 1.5rem; }
-            .hero p { font-size: 2.5rem; }
+            .projects-container { padding: 0 1.25rem 2rem 1.25rem; }
+            footer { padding: 2rem 1.25rem; font-size: 0.8rem; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="nav-left">
-            <a href="index.html">WORKS</a>
-            <a href="my-own-brief.html">MY OWN BRIEF</a>
-        </div>
-        
         <div class="nav-center">
             <a href="index.html">
                 <img src="img/logo-dh.png" alt="Debora Hill Logo" style="height: 55px; width: auto;">
             </a>
         </div>
 
-        <div class="nav-right">
-            <a href="about.html">ABOUT</a>
-            <a href="mailto:deborahillert@gmail.com">CONTACT</a>
+        <div class="nav-container-mobile">
+            <div class="nav-left">
+                <a href="index.html">WORKS</a>
+                <a href="my-own-brief.html">MY OWN BRIEF</a>
+            </div>
+
+            <div class="nav-right">
+                <a href="about.html">ABOUT</a>
+                <a href="mailto:deborahillert@gmail.com">CONTACT</a>
+            </div>
         </div>
     </header>
 
