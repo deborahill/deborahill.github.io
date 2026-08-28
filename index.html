@@ -40,7 +40,7 @@
             opacity: 0.6;
         }
 
-        /* --- NAVEGACIÓN --- */
+        /* --- NAVEGACIÓN (ORDENADOR) --- */
         header {
             display: flex;
             justify-content: space-between;
@@ -72,7 +72,7 @@
             text-align: center;
         }
 
-        /* --- HERO --- */
+        /* --- HERO (ORDENADOR) --- */
         .hero {
             text-align: left;
             padding: 8rem 3rem;
@@ -84,7 +84,6 @@
             color: var(--text-main);
             max-width: 100%; 
             margin: 0; 
-            /* Interlineado más agresivo (bajamos de 0.95 a 0.88) */
             line-height: 0.88; 
             letter-spacing: -0.04em; 
         }
@@ -147,17 +146,55 @@
             .grid { grid-template-columns: repeat(2, 1fr); }
         }
 
+        /* --- VERSIÓN MÓVIL ESTILO CAPTURA --- */
         @media (max-width: 768px) {
-            header { flex-direction: column; gap: 1.5rem; padding: 1.5rem; }
-            .nav-left, .nav-right { justify-content: center; gap: 1.5rem; }
+            header { 
+                display: grid;
+                grid-template-columns: auto auto auto auto;
+                justify-content: space-between;
+                align-items: center;
+                padding: 2.5rem 1.25rem 1.5rem 1.25rem; 
+                row-gap: 2.5rem;
+            }
+            
+            .nav-center { 
+                grid-column: 1 / -1; /* El logo ocupa toda la primera fila */
+                text-align: center;
+            }
+            
+            .nav-center img {
+                height: 70px !important; 
+            }
+
+            .nav-left, .nav-right { 
+                display: contents; /* Esto permite que los enlaces se alineen en la cuadrícula ignorando los divs padre */
+            }
+            
+            header a {
+                font-size: 0.75rem;
+                letter-spacing: 0.04em;
+            }
+
+            .hero {
+                padding: 2.5rem 1.25rem 5rem 1.25rem;
+            }
+
+            .hero p { 
+                font-size: clamp(2.3rem, 9vw, 3.2rem); 
+                line-height: 0.9;
+                letter-spacing: -0.04em;
+                text-align: left;
+            }
+
             .grid { grid-template-columns: 1fr; } 
-            .projects-container { padding: 0 1.5rem 2rem 1.5rem; }
-            .hero p { font-size: 2.5rem; }
+            .projects-container { padding: 0 1.25rem 2rem 1.25rem; }
+            footer { padding: 2rem 1.25rem; font-size: 0.8rem; }
         }
     </style>
 </head>
 <body>
 
+    <!-- HTML Intacto para que no se rompa la versión de PC -->
     <header>
         <div class="nav-left">
             <a href="index.html">WORKS</a>
