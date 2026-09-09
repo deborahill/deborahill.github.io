@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEBORA HILLERT - Bullpadel Premier Collection</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&display=swap');
+        :root { --bg-color: #000000; --text-main: rgba(255, 255, 255, 0.85); --text-muted: rgba(132, 132, 132, 0.85); --border-color: rgba(255, 255, 255, 0.2); --font-main: 'Space Grotesk', Helvetica, Arial, sans-serif; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: var(--bg-color); color: var(--text-main); font-family: var(--font-main); font-variant-numeric: slashed-zero; -webkit-font-smoothing: antialiased; }
+        a { color: inherit; text-decoration: none; transition: opacity 0.3s ease; }
+        a:hover { opacity: 0.6; }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 2rem 3rem; font-size: 0.9rem; position: sticky; top: 0; background-color: var(--bg-color); z-index: 100; }
+        header a { text-transform: uppercase; }
+        .nav-left, .nav-right { display: flex; gap: 3rem; flex: 1; }
+        .nav-right { justify-content: flex-end; }
+        .nav-center { flex: 1; text-align: center; }
+        .project-hero { padding: 2rem 3rem; }
+        .project-hero img { width: 100%; height: auto; display: block; }
+        .project-details { display: grid; grid-template-columns: 1fr 2fr 3fr; gap: 3rem; padding: 4rem 3rem; border-bottom: 1px solid var(--border-color); }
+        .detail-column { display: flex; flex-direction: column; gap: 1.5rem; }
+        .detail-title { color: var(--text-muted); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .detail-content { font-size: 0.95rem; line-height: 1.6; text-transform: none; }
+        .detail-content p { margin-bottom: 1.5rem; }
+        .team-credits { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; margin-top: 2rem; line-height: 1.5; }
+        
+        .project-gallery { padding: 4rem 3rem; display: flex; flex-direction: column; gap: 1.5rem; }
+        .gallery-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .project-gallery img { width: 100%; height: auto; max-width: 100%; display: block; object-fit: cover; }
+        
+        .slogan-footer { text-align: right; font-size: clamp(3rem, 6vw, 6rem); color: rgba(255, 255, 255, 0.05); padding: 4rem 3rem; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); line-height: 1.1; font-weight: 400; min-height: 150px; }
+        footer { display: flex; justify-content: space-between; padding: 2rem 3rem; color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; }
+        
+        @media (max-width: 768px) { 
+            header { display: flex; justify-content: space-between; padding: 10.5rem 1.25rem 3.5rem 1.25rem; position: relative; } 
+            .nav-left, .nav-right { display: contents; } 
+            .nav-center { position: absolute; top: 2.5rem; left: 50%; transform: translateX(-50%); width: auto; } 
+            .nav-center img { height: 75px !important; } 
+            header a { font-size: 0.75rem; letter-spacing: 0.02em; } 
+            .project-details { grid-template-columns: 1fr; gap: 3rem; padding: 2rem 1.5rem; } 
+            .project-hero, .project-gallery { padding-left: 1.5rem; padding-right: 1.5rem; } 
+            .gallery-row { grid-template-columns: 1fr; }
+            .slogan-footer { padding: 3rem 1.5rem; min-height: 100px; } 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-left"><a href="index.html">WORKS</a><a href="my-own-brief.html">MY OWN BRIEF</a></div>
+        <div class="nav-center"><a href="index.html"><img src="img/logo-dh.png" alt="Debora Hill Logo" style="height: 55px; width: auto;"></a></div>
+        <div class="nav-right"><a href="about.html">ABOUT</a><a href="mailto:deborahillert@gmail.com">CONTACT</a></div>
+    </header>
+    
+    <section class="project-hero">
+        <img src="img/PROYECTO_16_BULL_PREMIER/premier_1.webp" alt="Bullpadel Premier 1">
+    </section>
+    
+    <section class="project-details">
+        <div class="detail-column">
+            <div class="detail-title">CLIENT</div>
+            <div class="detail-content">Bullpadel Premier Collection</div>
+        </div>
+        <div class="detail-column">
+            <div class="detail-title">SERVICES</div>
+            <div class="detail-content">Art Direction<br>Concept</div>
+        </div>
+        <div class="detail-column">
+            <div class="detail-title">OVERVIEW</div>
+            <div class="detail-content">
+                <p>To launch the new racket collection with Premier Padel, we turned the final destination of the season into the beginning of something bigger. Barcelona was the last stop of the journey, but also the place where players could make history. We created a universe inspired by the world of travel, where airports, arrivals and destinations met the excitement of competition.</p>
+                <p>Para lanzar la nueva colección de palas junto a Premier Padel, convertimos el último destino de la temporada en el comienzo de algo más grande. Barcelona era la última parada del viaje, pero también el lugar donde los jugadores podían hacer historia. Creamos un universo inspirado en el mundo de los viajes, donde aeropuertos, llegadas y destinos se mezclaban con la emoción de la competición.</p>
+                <div class="team-credits">
+                    /EQUIPO CREATIVO/ Creative Director: Juan Zilli / Art Director: Débora Hillert /
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="project-gallery">
+        <!-- FOTO 2 EN GRANDE -->
+        <img src="img/PROYECTO_16_BULL_PREMIER/premier_2.webp" alt="Bullpadel Premier 2">
+        
+        <!-- FOTOS EMPAREJADAS SEGÚN PDF -->
+        <div class="gallery-row">
+            <img src="img/PROYECTO_16_BULL_PREMIER/premier_3.webp" alt="Bullpadel Premier 3">
+            <img src="img/PROYECTO_16_BULL_PREMIER/premier_4.webp" alt="Bullpadel Premier 4">
+        </div>
+        
+        <div class="gallery-row">
+            <img src="img/PROYECTO_16_BULL_PREMIER/premier_5.webp" alt="Bullpadel Premier 5">
+            <img src="img/PROYECTO_16_BULL_PREMIER/premier_6.webp" alt="Bullpadel Premier 6">
+        </div>
+        
+        <div class="gallery-row">
+            <img src="img/PROYECTO_16_BULL_PREMIER/premier_7.webp" alt="Bullpadel Premier 7">
+            <img src="img/PROYECTO_16_BULL_PREMIER/premier_8.webp" alt="Bullpadel Premier 8">
+        </div>
+    </section>
+    
+    <h2 class="slogan-footer"></h2>
+    <footer><div>&copy; DEBORA HILLERT</div><div>MADRID, ESPAÑA 2026</div></footer>
+</body>
+</html>
