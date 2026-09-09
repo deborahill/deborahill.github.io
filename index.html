@@ -16,11 +16,7 @@
             --font-main: 'Space Grotesk', Helvetica, Arial, sans-serif;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
             background-color: var(--bg-color);
@@ -31,17 +27,9 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
-        a {
-            color: inherit;
-            text-decoration: none;
-            transition: opacity 0.3s ease;
-        }
+        a { color: inherit; text-decoration: none; transition: opacity 0.3s ease; }
+        a:hover { opacity: 0.6; }
 
-        a:hover {
-            opacity: 0.6;
-        }
-
-        /* --- NAVEGACIÓN (ORDENADOR) --- */
         header {
             display: flex;
             justify-content: space-between;
@@ -53,32 +41,12 @@
             background-color: var(--bg-color);
             z-index: 100;
         }
-        
-        header a {
-            text-transform: uppercase;
-        }
+        header a { text-transform: uppercase; }
+        .nav-left, .nav-right { display: flex; gap: 3rem; flex: 1; }
+        .nav-right { justify-content: flex-end; }
+        .nav-center { flex: 1; text-align: center; }
 
-        .nav-left, .nav-right {
-            display: flex;
-            gap: 3rem;
-            flex: 1;
-        }
-
-        .nav-right {
-            justify-content: flex-end;
-        }
-
-        .nav-center {
-            flex: 1;
-            text-align: center;
-        }
-
-        /* --- HERO (ORDENADOR) --- */
-        .hero {
-            text-align: left;
-            padding: 8rem 3rem;
-        }
-
+        .hero { text-align: left; padding: 8rem 3rem; }
         .hero p {
             font-size: clamp(3rem, 7.5vw, 7rem); 
             font-weight: 400;
@@ -89,11 +57,7 @@
             letter-spacing: -0.04em; 
         }
 
-        /* --- CUADRÍCULA DE PROYECTOS --- */
-        .projects-container {
-            padding: 0 3rem 4rem 3rem;
-        }
-
+        .projects-container { padding: 0 3rem 4rem 3rem; }
         .grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -102,37 +66,12 @@
             padding-top: 3rem;
         }
 
-        .project-item {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            cursor: pointer;
-        }
+        .project-item { display: flex; flex-direction: column; gap: 1rem; cursor: pointer; }
+        .project-title { color: var(--text-muted); font-size: 0.95rem; letter-spacing: 0.02em; text-transform: uppercase; }
+        .project-image { width: 100%; overflow: hidden; }
+        .project-image img { width: 100%; height: auto; display: block; transition: opacity 0.3s ease; }
+        .project-item:hover .project-image img { opacity: 0.7; }
 
-        .project-title {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            letter-spacing: 0.02em;
-            text-transform: uppercase;
-        }
-
-        .project-image {
-            width: 100%;
-            overflow: hidden;
-        }
-
-        .project-image img {
-            width: 100%;
-            height: auto; 
-            display: block;
-            transition: opacity 0.3s ease;
-        }
-
-        .project-item:hover .project-image img {
-            opacity: 0.7;
-        }
-
-        /* --- FOOTER --- */
         footer {
             display: flex;
             justify-content: space-between;
@@ -142,63 +81,25 @@
             border-top: 1px solid var(--border-color);
         }
 
-        /* --- RESPONSIVO --- */
         @media (max-width: 1024px) {
             .grid { grid-template-columns: repeat(2, 1fr); }
         }
 
-        /* --- VERSIÓN MÓVIL ESTILO CAPTURA EXACTA --- */
         @media (max-width: 768px) {
             header { 
-                display: flex;
-                justify-content: space-between; 
-                /* 10.5rem arriba para separar el menú del logo. 3.5rem abajo para separar el menú del texto */
+                display: flex; justify-content: space-between; 
                 padding: 10.5rem 1.25rem 3.5rem 1.25rem; 
                 position: relative;
             }
-            
-            .nav-left, .nav-right {
-                display: contents; 
-            }
-            
-            .nav-center { 
-                position: absolute; 
-                top: 2.5rem; 
-                left: 50%;
-                transform: translateX(-50%);
-                width: auto;
-            }
-            
-            .nav-center img {
-                height: 75px !important; 
-            }
-            
-            header a {
-                font-size: 0.75rem; 
-                letter-spacing: 0.02em;
-            }
-
-            .hero {
-                padding: 0 1.25rem 4rem 1.25rem;
-            }
-
-            .hero p { 
-                font-size: 11.5vw; 
-                line-height: 0.9;
-                letter-spacing: -0.05em;
-                text-align: left;
-            }
-
+            .nav-left, .nav-right { display: contents; }
+            .nav-center { position: absolute; top: 2.5rem; left: 50%; transform: translateX(-50%); width: auto; }
+            .nav-center img { height: 75px !important; }
+            header a { font-size: 0.75rem; letter-spacing: 0.02em; }
+            .hero { padding: 0 1.25rem 4rem 1.25rem; }
+            .hero p { font-size: 11.5vw; line-height: 0.9; letter-spacing: -0.05em; text-align: left; }
             .grid { grid-template-columns: 1fr; gap: 3rem 1.5rem; } 
             .projects-container { padding: 0 1.25rem 2rem 1.25rem; }
-            footer { 
-                padding: 2rem 1.25rem; 
-                font-size: 0.8rem; 
-                flex-direction: column; 
-                gap: 1rem; 
-                align-items: center; 
-                text-align: center; 
-            }
+            footer { padding: 2rem 1.25rem; font-size: 0.8rem; flex-direction: column; gap: 1rem; align-items: center; text-align: center; }
         }
     </style>
 </head>
@@ -209,13 +110,11 @@
             <a href="index.html">WORKS</a>
             <a href="my-own-brief.html">MY OWN BRIEF</a>
         </div>
-        
         <div class="nav-center">
             <a href="index.html">
                 <img src="img/logo-dh.png" alt="Debora Hill Logo" style="height: 55px; width: auto;">
             </a>
         </div>
-
         <div class="nav-right">
             <a href="about.html">ABOUT</a>
             <a href="mailto:deborahillert@gmail.com">CONTACT</a>
@@ -229,6 +128,7 @@
     <section class="projects-container">
         <div class="grid">
             
+            <!-- 2. ZOCO -->
             <a href="proyecto-zoco.html" class="project-item">
                 <div class="project-title">ZOCO - ART DIRECTION</div>
                 <div class="project-image">
@@ -236,6 +136,23 @@
                 </div>
             </a>
 
+            <!-- 17. FLORAL -->
+            <a href="proyecto-floral.html" class="project-item">
+                <div class="project-title">FLORAL DISTORTION - ART DIRECTION</div>
+                <div class="project-image">
+                    <img src="img/PROYECTO_17_FLORAL/floral_home.webp" alt="Floral Distortion">
+                </div>
+            </a>
+
+            <!-- 15. BULLPADEL PROLINE -->
+            <a href="proyecto-bullpadel-proline.html" class="project-item">
+                <div class="project-title">BULLPADEL PROLINE - ART DIRECTION</div>
+                <div class="project-image">
+                    <img src="img/PROYECTO_15_BULLPADEL_PROLINE/proline_home.webp" alt="Bullpadel Proline">
+                </div>
+            </a>
+
+            <!-- 5. BULLPADEL -->
             <a href="proyecto-bullpadel.html" class="project-item">
                 <div class="project-title">BULLPADEL - ART DIRECTION</div>
                 <div class="project-image">
@@ -243,6 +160,15 @@
                 </div>
             </a>
 
+            <!-- 14. LUCA -->
+            <a href="proyecto-luca.html" class="project-item">
+                <div class="project-title">LUCA - ART DIRECTION</div>
+                <div class="project-image">
+                    <img src="img/PROYECTO_14_LUCA/Luca_home.webp" alt="Luca">
+                </div>
+            </a>
+
+            <!-- 8. WALLAPOP -->
             <a href="proyecto-wallapop.html" class="project-item">
                 <div class="project-title">WALLAPOP - ART DIRECTION</div>
                 <div class="project-image">
@@ -250,6 +176,7 @@
                 </div>
             </a>
 
+            <!-- 1. BALEAR -->
             <a href="proyecto-balear.html" class="project-item">
                 <div class="project-title">BALEAR - BRAND IDENTITY</div>
                 <div class="project-image">
@@ -257,6 +184,15 @@
                 </div>
             </a>
 
+            <!-- 16. BULLPADEL PREMIER -->
+            <a href="proyecto-bullpadel-premier.html" class="project-item">
+                <div class="project-title">BULLPADEL PREMIER - ART DIRECTION</div>
+                <div class="project-image">
+                    <img src="img/PROYECTO_16_BULL_PREMIER/premier_home.webp" alt="Bullpadel Premier">
+                </div>
+            </a>
+
+            <!-- 9. BEEFEATER -->
             <a href="proyecto-beefeater.html" class="project-item">
                 <div class="project-title">BEEFEATER - ART DIRECTION</div>
                 <div class="project-image">
@@ -264,34 +200,7 @@
                 </div>
             </a>
 
-            <a href="proyecto-grindr.html" class="project-item">
-                <div class="project-title">GRINDR - ART DIRECTION</div>
-                <div class="project-image">
-                    <img src="img/PROYECTO_6_GRINDR/GRINDR_home.webp" alt="Grindr">
-                </div>
-            </a>
-
-            <a href="proyecto-ginos.html" class="project-item">
-                <div class="project-title">GINOS - ART DIRECTION</div>
-                <div class="project-image">
-                    <img src="img/PROYECTO_3_GINOS/GINOS_home.webp" alt="Ginos">
-                </div>
-            </a>
-
-            <a href="proyecto-halo.html" class="project-item">
-                <div class="project-title">HALO - BRAND IDENTITY</div>
-                <div class="project-image">
-                    <img src="img/PROYECTO_10_HALO/HALO_home.webp" alt="Halo">
-                </div>
-            </a>
-
-            <a href="proyecto-skinjoy.html" class="project-item">
-                <div class="project-title">SKIN&JOY - BRAND IDENTITY</div>
-                <div class="project-image">
-                    <img src="img/PROYECTO_4_SKINJOY/SKINJOY_home.webp" alt="Skin&Joy">
-                </div>
-            </a>
-
+            <!-- 11. ACEITES -->
             <a href="proyecto-aceites.html" class="project-item">
                 <div class="project-title">ACEITES DE ESPAÑA - ART DIRECTION</div>
                 <div class="project-image">
@@ -299,6 +208,55 @@
                 </div>
             </a>
 
+            <!-- 6. GRINDR -->
+            <a href="proyecto-grindr.html" class="project-item">
+                <div class="project-title">GRINDR - ART DIRECTION</div>
+                <div class="project-image">
+                    <img src="img/PROYECTO_6_GRINDR/GRINDR_home.webp" alt="Grindr">
+                </div>
+            </a>
+
+            <!-- 12. BALLENAS -->
+            <a href="proyecto-ballenas.html" class="project-item">
+                <div class="project-title">EL SECRETO DE LAS BALLENAS - ART DIRECTION</div>
+                <div class="project-image">
+                    <img src="img/PROYECTO_12_BALLENAS/Ballenas_home.webp" alt="El secreto de las ballenas">
+                </div>
+            </a>
+
+            <!-- 10. HALO -->
+            <a href="proyecto-halo.html" class="project-item">
+                <div class="project-title">HALO - BRAND IDENTITY</div>
+                <div class="project-image">
+                    <img src="img/PROYECTO_10_HALO/HALO_home.webp" alt="Halo">
+                </div>
+            </a>
+
+            <!-- 13. AVATAR -->
+            <a href="proyecto-avatar.html" class="project-item">
+                <div class="project-title">AVATAR - ART DIRECTION</div>
+                <div class="project-image">
+                    <img src="img/PROYECTO_13_AVATAR/Avatar_home.webp" alt="Avatar">
+                </div>
+            </a>
+
+            <!-- 4. SKINJOY -->
+            <a href="proyecto-skinjoy.html" class="project-item">
+                <div class="project-title">SKIN&JOY - BRAND IDENTITY</div>
+                <div class="project-image">
+                    <img src="img/PROYECTO_4_SKINJOY/SKINJOY_home.webp" alt="Skin&Joy">
+                </div>
+            </a>
+
+            <!-- 3. GINOS -->
+            <a href="proyecto-ginos.html" class="project-item">
+                <div class="project-title">GINOS - ART DIRECTION</div>
+                <div class="project-image">
+                    <img src="img/PROYECTO_3_GINOS/GINOS_home.webp" alt="Ginos">
+                </div>
+            </a>
+
+            <!-- 7. FOTOCASA -->
             <a href="proyecto-fotocasa.html" class="project-item">
                 <div class="project-title">FOTOCASA - CONCEPT - ART DIRECTION</div>
                 <div class="project-image">
