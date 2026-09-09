@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="img/logo-dh.png">
-    <title>DEBORA HILLERT - Beefeater</title>
+    <title>DEBORA HILLERT - Floral Distortion</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&display=swap');
         :root { --bg-color: #000000; --text-main: rgba(255, 255, 255, 0.85); --text-muted: rgba(132, 132, 132, 0.85); --border-color: rgba(255, 255, 255, 0.2); --font-main: 'Space Grotesk', Helvetica, Arial, sans-serif; }
@@ -24,9 +23,11 @@
         .detail-title { color: var(--text-muted); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em; }
         .detail-content { font-size: 0.95rem; line-height: 1.6; text-transform: none; }
         .detail-content p { margin-bottom: 1.5rem; }
+        
         .project-gallery { padding: 4rem 3rem; display: flex; flex-direction: column; gap: 1.5rem; }
         .gallery-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-        .project-gallery img { width: 100%; height: 100%; max-width: 100%; display: block; object-fit: cover; }
+        .project-gallery img, .project-gallery video { width: 100%; height: 100%; max-width: 100%; display: block; object-fit: cover; }
+        
         .slogan-footer { text-align: right; font-size: clamp(3rem, 6vw, 6rem); color: rgba(255, 255, 255, 0.05); padding: 4rem 3rem; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); line-height: 1.1; font-weight: 400; min-height: 150px; }
         footer { display: flex; justify-content: space-between; padding: 2rem 3rem; color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; }
         
@@ -38,7 +39,7 @@
             header a { font-size: 0.75rem; letter-spacing: 0.02em; } 
             .project-details { grid-template-columns: 1fr; gap: 3rem; padding: 2rem 1.5rem; } 
             .project-hero, .project-gallery { padding-left: 1.5rem; padding-right: 1.5rem; } 
-            .gallery-row { grid-template-columns: 1fr; } 
+            .gallery-row { grid-template-columns: 1fr; }
             .slogan-footer { padding: 3rem 1.5rem; min-height: 100px; } 
         }
     </style>
@@ -46,28 +47,51 @@
 <body>
     <header>
         <div class="nav-left"><a href="index.html">WORKS</a><a href="my-own-brief.html">MY OWN BRIEF</a></div>
-        <div class="nav-center"><a href="index.html"><img src="img/logo-dh.png" alt="Debora Hillert Logo" style="height: 55px; width: auto;"></a></div>
+        <div class="nav-center"><a href="index.html"><img src="img/logo-dh.png" alt="Debora Hill Logo" style="height: 55px; width: auto;"></a></div>
         <div class="nav-right"><a href="about.html">ABOUT</a><a href="mailto:deborahillert@gmail.com">CONTACT</a></div>
     </header>
-    <section class="project-hero"><img src="img/PROYECTO_9_BEEFEATER/BEEFEATER_1.webp" alt="Beefeater 1"></section>
+    
+    <!-- GIF principal -->
+    <section class="project-hero">
+        <img src="img/PROYECTO_17_FLORAL/floral_1.gif" alt="Floral Distortion">
+    </section>
+    
+    <!-- Título adaptado sin cliente -->
     <section class="project-details">
-        <div class="detail-column"><div class="detail-title">CLIENT</div><div class="detail-content">Beefeater</div></div>
-        <div class="detail-column"><div class="detail-title">SERVICES</div><div class="detail-content">Proposal<br>Concept<br>Art Direction</div></div>
+        <div class="detail-column"></div>
+        <div class="detail-column">
+            <div class="detail-title">PROJECT</div>
+            <div class="detail-content">My Own Brief: Creative Explorations - AI</div>
+        </div>
         <div class="detail-column">
             <div class="detail-title">OVERVIEW</div>
             <div class="detail-content">
-                <p>For Beefeater, we created a special activation for influencers conceived as a trip to London, designed to experience the brand’s spirit firsthand. The proposal was built around the interplay between tradition and modernity, reflected across every touchpoint of the experience.</p>
-                <p>Para Beefeater presentamos una acción especial para influencers concebida como un viaje a Londres para experimentar el espíritu de la marca en primera persona. Una propuesta construida desde la convivencia entre tradición y actualidad, presente en todos los touchpoints de la experiencia.</p>
+                <p>What happens when the anatomy of a flower becomes the anatomy of a garment?</p>
+                <p>Floral Distortion is a conceptual fashion study exploring the transformation of botanical forms into exaggerated silhouettes, textures and visual environments. The project reimagines the relationship between nature and fashion through surreal imagery, using AI as a creative tool to push familiar forms into unexpected territories.</p>
             </div>
         </div>
     </section>
+    
     <section class="project-gallery">
-        <img src="img/PROYECTO_9_BEEFEATER/BEEFEATER_2.webp" alt="Beefeater 2">
-        <img src="img/PROYECTO_9_BEEFEATER/BEEFEATER_3.webp" alt="Beefeater 3">
-        <img src="img/PROYECTO_9_BEEFEATER/BEEFEATER_4.webp" alt="Beefeater 4">
-        <img src="img/PROYECTO_9_BEEFEATER/BEEFEATER_5.webp" alt="Beefeater 5">
-        <img src="img/PROYECTO_9_BEEFEATER/BEEFEATER_6.webp" alt="Beefeater 6">
+        <!-- FOTO 2 Y VÍDEO 3 EMPAREJADOS -->
+        <div class="gallery-row">
+            <img src="img/PROYECTO_17_FLORAL/floral_2.webp" alt="Floral 2">
+            <video src="img/PROYECTO_17_FLORAL/floral_3.mp4" autoplay loop muted playsinline></video>
+        </div>
+        
+        <!-- FOTOS 4 Y 5 EMPAREJADAS -->
+        <div class="gallery-row">
+            <img src="img/PROYECTO_17_FLORAL/floral_4.webp" alt="Floral 4">
+            <img src="img/PROYECTO_17_FLORAL/floral_5.webp" alt="Floral 5">
+        </div>
+        
+        <!-- FOTOS 6 Y 7 EMPAREJADAS -->
+        <div class="gallery-row">
+            <img src="img/PROYECTO_17_FLORAL/floral_6.webp" alt="Floral 6">
+            <img src="img/PROYECTO_17_FLORAL/floral_7.webp" alt="Floral 7">
+        </div>
     </section>
+    
     <h2 class="slogan-footer"></h2>
     <footer><div>&copy; DEBORA HILLERT</div><div>MADRID, ESPAÑA 2026</div></footer>
 </body>
