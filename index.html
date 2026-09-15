@@ -86,6 +86,95 @@
             .nav-center { position: absolute; top: 2.5rem; left: 50%; transform: translateX(-50%); width: auto; }
             .nav-center img { height: 75px !important; }
             header a { font-size: 0.75rem; letter-spacing: 0.02em; }
+            .hero { padding: 0 1.2<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/logo-dh.png">
+    <title>DEBORA HILLERT - Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&display=swap');
+        :root { --bg-color: #000000; --text-main: rgba(255, 255, 255, 0.85); --text-muted: rgba(132, 132, 132, 0.85); --border-color: rgba(255, 255, 255, 0.4); --font-main: 'Space Grotesk', Helvetica, Arial, sans-serif; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: var(--bg-color); color: var(--text-main); font-family: var(--font-main); font-variant-numeric: slashed-zero; -webkit-font-smoothing: antialiased; }
+        a { color: inherit; text-decoration: none; transition: opacity 0.3s ease; }
+        a:hover { opacity: 0.6; }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 2rem 3rem; font-size: 0.9rem; position: sticky; top: 0; background-color: var(--bg-color); z-index: 100; }
+        header a { text-transform: uppercase; }
+        .nav-left, .nav-right { display: flex; gap: 3rem; flex: 1; }
+        .nav-right { justify-content: flex-end; }
+        .nav-center { flex: 1; text-align: center; }
+        .hero { text-align: left; padding: 8rem 3rem; }
+        .hero p { font-size: clamp(3rem, 7.5vw, 7rem); font-weight: 400; color: var(--text-main); max-width: 100%; margin: 0; line-height: 0.88; letter-spacing: -0.04em; }
+        .projects-container { padding: 0 3rem 4rem 3rem; }
+        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4rem 2rem; border-top: 1px solid var(--border-color); padding-top: 3rem; }
+        .project-item { display: flex; flex-direction: column; gap: 1rem; cursor: pointer; }
+        .project-title { color: var(--text-muted); font-size: 0.95rem; letter-spacing: 0.02em; text-transform: uppercase; }
+        .project-image { width: 100%; overflow: hidden; }
+        .project-image img { width: 100%; height: auto; display: block; transition: opacity 0.3s ease; }
+        .project-item:hover .project-image img { opacity: 0.7; }
+        footer { display: flex; justify-content: space-between; padding: 2rem 3rem; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid var(--border-color); }
+        
+        /* ESTILOS DE LA INTRO TIPO GREGOR COLLIENNE (STACK CENTRAL) */
+        #intro-splash {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 99999;
+            overflow: hidden;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+        .intro-stack {
+            position: relative;
+            width: 320px;
+            height: 420px;
+            max-width: 75vw;
+            max-height: 65vh;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+        }
+        .intro-stack img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.05s ease-in-out;
+        }
+        .intro-stack img.active {
+            opacity: 1;
+        }
+        .intro-skip {
+            position: absolute;
+            bottom: 2rem;
+            color: rgba(255, 255, 255, 0.4);
+            font-family: var(--font-main);
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+        .intro-skip:hover { color: #ffffff; }
+        .splash-hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        @media (max-width: 1024px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { 
+            header { display: flex; justify-content: space-between; padding: 10.5rem 1.25rem 3.5rem 1.25rem; position: relative; }
+            .nav-left, .nav-right { display: contents; }
+            .nav-center { position: absolute; top: 2.5rem; left: 50%; transform: translateX(-50%); width: auto; }
+            .nav-center img { height: 75px !important; }
+            header a { font-size: 0.75rem; letter-spacing: 0.02em; }
             .hero { padding: 0 1.25rem 4rem 1.25rem; }
             .hero p { font-size: 11.5vw; line-height: 0.9; letter-spacing: -0.05em; text-align: left; }
             .grid { grid-template-columns: 1fr; gap: 3rem 1.5rem; } 
@@ -96,25 +185,38 @@
 </head>
 <body>
 
-    <!-- ANIMACIÓN INICIAL (SPLASH SCREEN) -->
+    <!-- INTRODUCCIÓN CON TODAS LAS FOTOS EN PILA CENTRAL -->
     <div id="intro-splash">
-        <div class="intro-carousel" id="splashCarousel">
+        <div class="intro-stack" id="splashStack">
             <img src="img/PROYECTO_2_ZOCO/ZOCO_home.webp" class="active" alt="Intro">
+            <img src="img/PROYECTO_17_FLORAL/floral_home.webp" alt="Intro">
+            <img src="img/PROYECTO_15_BULLPADEL_PROLINE/PROLINE_HOME.webp" alt="Intro">
             <img src="img/PROYECTO_5_BULLPADEL/BULLPADEL_home.webp" alt="Intro">
-            <img src="img/PROYECTO_8_WALLAPOP/WALLAPOP_home.webp" alt="Intro">
             <img src="img/PROYECTO_14_LUCA/LUCA_home.webp" alt="Intro">
+            <img src="img/PROYECTO_8_WALLAPOP/WALLAPOP_home.webp" alt="Intro">
+            <img src="img/PROYECTO_1_BALEAR/BALEAR_home.webp" alt="Intro">
             <img src="img/PROYECTO_16_BULL_PREMIER/premier_home.webp" alt="Intro">
+            <img src="img/PROYECTO_9_BEEFEATER/BEEFEATER_home.webp" alt="Intro">
+            <img src="img/PROYECTO_11_ACEITES/ACEITES_home.webp" alt="Intro">
+            <img src="img/PROYECTO_6_GRINDR/GRINDR_home.webp" alt="Intro">
+            <img src="img/PROYECTO_12_BALLENAS/Ballenas_home.webp" alt="Intro">
+            <img src="img/PROYECTO_10_HALO/HALO_home.webp" alt="Intro">
+            <img src="img/PROYECTO_13_AVATAR/Avatar_home.webp" alt="Intro">
+            <img src="img/PROYECTO_4_SKINJOY/SKINJOY_home.webp" alt="Intro">
+            <img src="img/PROYECTO_3_GINOS/GINOS_home.webp" alt="Intro">
+            <img src="img/PROYECTO_7_FOTOCASA/FOTOCASA_home.webp" alt="Intro">
+            <img src="img/PROYECTO_18_RIBERA/RIBERA_HOME.webp" alt="Intro">
         </div>
         <div class="intro-skip" onclick="cerrarIntro()">[ SKIP INTRO ]</div>
     </div>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            const images = document.querySelectorAll("#splashCarousel img");
+            const images = document.querySelectorAll("#splashStack img");
             let currentIndex = 0;
-            const totalCycles = 3; // Número de vueltas al carrusel antes de entrar
             let currentCycle = 0;
-            const intervalTime = 160; // Velocidad del parpadeo de las fotos
+            const totalCycles = 2; // Da 2 vueltas completas a las 18 fotos y entra
+            const intervalTime = 120; // Velocidad de ráfaga en milisegundos (muy fluido)
 
             const slideInterval = setInterval(function() {
                 images[currentIndex].classList.remove("active");
@@ -142,7 +244,7 @@
             }
         }
     </script>
-    <!-- FIN DE LA ANIMACIÓN INICIAL -->
+    <!-- FIN DE LA INTRO -->
 
     <header>
         <div class="nav-left"><a href="works.html">WORKS</a><a href="my-own-brief.html">MY OWN BRIEF</a></div>
