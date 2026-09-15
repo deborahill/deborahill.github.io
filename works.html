@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="img/logo-dh.png">
-    <title>DEBORA HILLERT - Portfolio</title>
+    <title>WORKS - Débora Hillert</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&display=swap');
 
@@ -25,11 +25,15 @@
             font-variant-numeric: slashed-zero;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         a { color: inherit; text-decoration: none; transition: opacity 0.3s ease; }
         a:hover { opacity: 0.6; }
 
+        /* --- NAVEGACIÓN --- */
         header {
             display: flex;
             justify-content: space-between;
@@ -46,24 +50,25 @@
         .nav-right { justify-content: flex-end; }
         .nav-center { flex: 1; text-align: center; }
 
-        .hero { text-align: left; padding: 8rem 3rem; }
+        main { flex: 1; padding: 0 3rem 4rem 3rem; }
+
+        .hero { text-align: center; padding: 4rem 2rem 2rem; }
         .hero p {
-            font-size: clamp(3rem, 7.5vw, 7rem); 
+            font-size: 2.5rem;
             font-weight: 400;
             color: var(--text-main);
-            max-width: 100%; 
-            margin: 0; 
-            line-height: 0.88; 
-            letter-spacing: -0.04em; 
+            max-width: 1000px;
+            margin: 0 auto;
+            line-height: 1.1;
         }
 
-        .projects-container { padding: 0 3rem 4rem 3rem; }
         .grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 4rem 2rem;
             border-top: 1px solid var(--border-color);
             padding-top: 3rem;
+            margin-top: 2rem;
         }
 
         .project-item { display: flex; flex-direction: column; gap: 1rem; cursor: pointer; }
@@ -95,11 +100,9 @@
             .nav-center { position: absolute; top: 2.5rem; left: 50%; transform: translateX(-50%); width: auto; }
             .nav-center img { height: 75px !important; }
             header a { font-size: 0.75rem; letter-spacing: 0.02em; }
-            .hero { padding: 0 1.25rem 4rem 1.25rem; }
-            .hero p { font-size: 11.5vw; line-height: 0.9; letter-spacing: -0.05em; text-align: left; }
-            .grid { grid-template-columns: 1fr; gap: 3rem 1.5rem; } 
-            .projects-container { padding: 0 1.25rem 2rem 1.25rem; }
-            footer { padding: 2rem 1.25rem; font-size: 0.8rem; flex-direction: column; gap: 1rem; align-items: center; text-align: center; }
+            main { padding: 0 1.25rem 2rem 1.25rem; }
+            .hero p { font-size: 1.5rem; }
+            .grid { grid-template-columns: 1fr; gap: 3rem 1.5rem; }
         }
     </style>
 </head>
@@ -121,151 +124,111 @@
         </div>
     </header>
 
-    <section class="hero">
-        <p>Débora Hillert. Senior Art Director based in Madrid. I create visual worlds for brands and campaigns, focused on craft and visual storytelling.</p>
-    </section>
+    <main>
+        <section class="hero">
+            <p>Selected Works.</p>
+        </section>
 
-    <section class="projects-container">
-        <div class="grid">
+        <section class="grid">
             
             <!-- 2. ZOCO -->
             <a href="proyecto-zoco.html" class="project-item">
                 <div class="project-title">ZOCO - ART DIRECTION</div>
-                <div class="project-image">
-                    <img src="img/PROYECTO_2_ZOCO/ZOCO_home.webp" alt="Zoco">
-                </div>
-            </a>
-
-            <!-- 17. FLORAL -->
-            <a href="proyecto-floral.html" class="project-item">
-                <div class="project-title">FLORAL DISTORTION - ART DIRECTION</div>
-                <div class="project-image">
-                    <img src="img/PROYECTO_17_FLORAL/floral_home.webp" alt="Floral Distortion">
-                </div>
+                <div class="project-image"><img src="img/PROYECTO_2_ZOCO/ZOCO_home.webp" alt="Zoco"></div>
             </a>
 
             <!-- 15. BULLPADEL PROLINE -->
             <a href="proyecto-bullpadel-proline.html" class="project-item">
                 <div class="project-title">BULLPADEL PROLINE - ART DIRECTION</div>
-                <div class="project-image">
-                    <img src="img/PROYECTO_15_BULLPADEL_PROLINE/proline_home.webp" alt="Bullpadel Proline">
-                </div>
+                <div class="project-image"><img src="img/PROYECTO_15_BULLPADEL_PROLINE/proline_home.webp" alt="Bullpadel Proline"></div>
             </a>
 
             <!-- 5. BULLPADEL -->
             <a href="proyecto-bullpadel.html" class="project-item">
                 <div class="project-title">BULLPADEL - ART DIRECTION</div>
-                <div class="project-image">
-                    <img src="img/PROYECTO_5_BULLPADEL/BULLPADEL_home.webp" alt="Bullpadel">
-                </div>
+                <div class="project-image"><img src="img/PROYECTO_5_BULLPADEL/BULLPADEL_home.webp" alt="Bullpadel"></div>
             </a>
 
             <!-- 14. LUCA -->
             <a href="proyecto-luca.html" class="project-item">
                 <div class="project-title">LUCA - ART DIRECTION</div>
-                <div class="project-image">
-                    <img src="img/PROYECTO_14_LUCA/Luca_home.webp" alt="Luca">
-                </div>
+                <div class="project-image"><img src="img/PROYECTO_14_LUCA/Luca_home.webp" alt="Luca"></div>
             </a>
 
             <!-- 8. WALLAPOP -->
             <a href="proyecto-wallapop.html" class="project-item">
                 <div class="project-title">WALLAPOP - ART DIRECTION</div>
-                <div class="project-image">
-                    <img src="img/PROYECTO_8_WALLAPOP/WALLAPOP_home.webp" alt="Wallapop">
-                </div>
+                <div class="project-image"><img src="img/PROYECTO_8_WALLAPOP/WALLAPOP_home.webp" alt="Wallapop"></div>
             </a>
 
             <!-- 1. BALEAR -->
             <a href="proyecto-balear.html" class="project-item">
                 <div class="project-title">BALEAR - BRAND IDENTITY</div>
-                <div class="project-image">
-                    <img src="img/PROYECTO_1_BALEAR/BALEAR_home.webp" alt="Balear">
-                </div>
+                <div class="project-image"><img src="img/PROYECTO_1_BALEAR/BALEAR_home.webp" alt="Balear"></div>
             </a>
 
             <!-- 16. BULLPADEL PREMIER -->
             <a href="proyecto-bullpadel-premier.html" class="project-item">
                 <div class="project-title">BULLPADEL PREMIER - ART DIRECTION</div>
-                <div class="project-image">
-                    <img src="img/PROYECTO_16_BULL_PREMIER/premier_home.webp" alt="Bullpadel Premier">
-                </div>
+                <div class="project-image"><img src="img/PROYECTO_16_BULL_PREMIER/premier_home.webp" alt="Bullpadel Premier"></div>
             </a>
 
             <!-- 9. BEEFEATER -->
             <a href="proyecto-beefeater.html" class="project-item">
                 <div class="project-title">BEEFEATER - ART DIRECTION</div>
-                <div class="project-image">
-                    <img src="img/PROYECTO_9_BEEFEATER/BEEFEATER_home.webp" alt="Beefeater">
-                </div>
+                <div class="project-image"><img src="img/PROYECTO_9_BEEFEATER/BEEFEATER_home.webp" alt="Beefeater"></div>
             </a>
 
             <!-- 11. ACEITES -->
             <a href="proyecto-aceites.html" class="project-item">
                 <div class="project-title">ACEITES DE ESPAÑA - ART DIRECTION</div>
-                <div class="project-image">
-                    <img src="img/PROYECTO_11_ACEITES/ACEITES_home.webp" alt="Aceites de España">
-                </div>
+                <div class="project-image"><img src="img/PROYECTO_11_ACEITES/ACEITES_home.webp" alt="Aceites de España"></div>
             </a>
 
             <!-- 6. GRINDR -->
             <a href="proyecto-grindr.html" class="project-item">
                 <div class="project-title">GRINDR - ART DIRECTION</div>
-                <div class="project-image">
-                    <img src="img/PROYECTO_6_GRINDR/GRINDR_home.webp" alt="Grindr">
-                </div>
+                <div class="project-image"><img src="img/PROYECTO_6_GRINDR/GRINDR_home.webp" alt="Grindr"></div>
             </a>
 
             <!-- 12. BALLENAS -->
             <a href="proyecto-ballenas.html" class="project-item">
                 <div class="project-title">EL SECRETO DE LAS BALLENAS - ART DIRECTION</div>
-                <div class="project-image">
-                    <img src="img/PROYECTO_12_BALLENAS/Ballenas_home.webp" alt="El secreto de las ballenas">
-                </div>
+                <div class="project-image"><img src="img/PROYECTO_12_BALLENAS/Ballenas_home.webp" alt="El secreto de las ballenas"></div>
             </a>
 
             <!-- 10. HALO -->
             <a href="proyecto-halo.html" class="project-item">
                 <div class="project-title">HALO - BRAND IDENTITY</div>
-                <div class="project-image">
-                    <img src="img/PROYECTO_10_HALO/HALO_home.webp" alt="Halo">
-                </div>
+                <div class="project-image"><img src="img/PROYECTO_10_HALO/HALO_home.webp" alt="Halo"></div>
             </a>
 
             <!-- 13. AVATAR -->
             <a href="proyecto-avatar.html" class="project-item">
                 <div class="project-title">AVATAR - ART DIRECTION</div>
-                <div class="project-image">
-                    <img src="img/PROYECTO_13_AVATAR/Avatar_home.webp" alt="Avatar">
-                </div>
+                <div class="project-image"><img src="img/PROYECTO_13_AVATAR/Avatar_home.webp" alt="Avatar"></div>
             </a>
 
             <!-- 4. SKINJOY -->
             <a href="proyecto-skinjoy.html" class="project-item">
                 <div class="project-title">SKIN&JOY - BRAND IDENTITY</div>
-                <div class="project-image">
-                    <img src="img/PROYECTO_4_SKINJOY/SKINJOY_home.webp" alt="Skin&Joy">
-                </div>
+                <div class="project-image"><img src="img/PROYECTO_4_SKINJOY/SKINJOY_home.webp" alt="Skin&Joy"></div>
             </a>
 
             <!-- 3. GINOS -->
             <a href="proyecto-ginos.html" class="project-item">
                 <div class="project-title">GINOS - ART DIRECTION</div>
-                <div class="project-image">
-                    <img src="img/PROYECTO_3_GINOS/GINOS_home.webp" alt="Ginos">
-                </div>
+                <div class="project-image"><img src="img/PROYECTO_3_GINOS/GINOS_home.webp" alt="Ginos"></div>
             </a>
 
             <!-- 7. FOTOCASA -->
             <a href="proyecto-fotocasa.html" class="project-item">
                 <div class="project-title">FOTOCASA - CONCEPT - ART DIRECTION</div>
-                <div class="project-image">
-                    <img src="img/PROYECTO_7_FOTOCASA/FOTOCASA_home.webp" alt="Fotocasa">
-                </div>
+                <div class="project-image"><img src="img/PROYECTO_7_FOTOCASA/FOTOCASA_home.webp" alt="Fotocasa"></div>
             </a>
 
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
         <div>&copy; DEBORA HILLERT</div>
