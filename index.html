@@ -27,6 +27,58 @@
         .project-image img { width: 100%; height: auto; display: block; transition: opacity 0.3s ease; }
         .project-item:hover .project-image img { opacity: 0.7; }
         footer { display: flex; justify-content: space-between; padding: 2rem 3rem; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid var(--border-color); }
+        
+        /* ESTILOS DE LA ANIMACIÓN SPLASH (ESTILO GREGOR COLLIENNE) */
+        #intro-splash {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 99999;
+            overflow: hidden;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+        .intro-carousel {
+            position: relative;
+            width: 350px;
+            height: 450px;
+            max-width: 80vw;
+            max-height: 70vh;
+        }
+        .intro-carousel img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.1s ease-in-out;
+        }
+        .intro-carousel img.active {
+            opacity: 1;
+        }
+        .intro-skip {
+            position: absolute;
+            bottom: 2rem;
+            color: rgba(255, 255, 255, 0.4);
+            font-family: var(--font-main);
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+        .intro-skip:hover { color: #ffffff; }
+        .splash-hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
         @media (max-width: 1024px) { .grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 768px) { 
             header { display: flex; justify-content: space-between; padding: 10.5rem 1.25rem 3.5rem 1.25rem; position: relative; }
@@ -43,6 +95,55 @@
     </style>
 </head>
 <body>
+
+    <!-- ANIMACIÓN INICIAL (SPLASH SCREEN) -->
+    <div id="intro-splash">
+        <div class="intro-carousel" id="splashCarousel">
+            <img src="img/PROYECTO_2_ZOCO/ZOCO_home.webp" class="active" alt="Intro">
+            <img src="img/PROYECTO_5_BULLPADEL/BULLPADEL_home.webp" alt="Intro">
+            <img src="img/PROYECTO_8_WALLAPOP/WALLAPOP_home.webp" alt="Intro">
+            <img src="img/PROYECTO_14_LUCA/LUCA_home.webp" alt="Intro">
+            <img src="img/PROYECTO_16_BULL_PREMIER/premier_home.webp" alt="Intro">
+        </div>
+        <div class="intro-skip" onclick="cerrarIntro()">[ SKIP INTRO ]</div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const images = document.querySelectorAll("#splashCarousel img");
+            let currentIndex = 0;
+            const totalCycles = 3; // Número de vueltas al carrusel antes de entrar
+            let currentCycle = 0;
+            const intervalTime = 160; // Velocidad del parpadeo de las fotos
+
+            const slideInterval = setInterval(function() {
+                images[currentIndex].classList.remove("active");
+                currentIndex++;
+
+                if (currentIndex >= images.length) {
+                    currentIndex = 0;
+                    currentCycle++;
+                }
+
+                if (currentCycle >= totalCycles) {
+                    clearInterval(slideInterval);
+                    cerrarIntro();
+                } else {
+                    images[currentIndex].classList.add("active");
+                }
+            }, intervalTime);
+        });
+
+        function cerrarIntro() {
+            const splash = document.getElementById("intro-splash");
+            if (splash) {
+                splash.classList.add("splash-hidden");
+                setTimeout(() => { splash.remove(); }, 800);
+            }
+        }
+    </script>
+    <!-- FIN DE LA ANIMACIÓN INICIAL -->
+
     <header>
         <div class="nav-left"><a href="works.html">WORKS</a><a href="my-own-brief.html">MY OWN BRIEF</a></div>
         <div class="nav-center"><a href="index.html"><img src="img/logo-dh.png" alt="Debora Hill Logo" style="height: 55px; width: auto;"></a></div>
