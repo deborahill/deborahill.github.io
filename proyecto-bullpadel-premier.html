@@ -18,6 +18,10 @@
         .nav-center { flex: 1; text-align: center; }
         .project-hero { padding: 2rem 3rem; }
         .project-hero img { width: 100%; height: auto; display: block; }
+        
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; width: 100%; margin-bottom: 1.5rem;}
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        
         .project-details { display: grid; grid-template-columns: 1fr 2fr 3fr; gap: 3rem; padding: 4rem 3rem; border-bottom: 1px solid var(--border-color); }
         .detail-column { display: flex; flex-direction: column; gap: 1.5rem; }
         .detail-title { color: var(--text-muted); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em; }
@@ -81,7 +85,7 @@
         <!-- FOTO 2 EN GRANDE -->
         <img src="img/PROYECTO_16_BULL_PREMIER/premier_2.webp" alt="Bullpadel Premier 2">
         
-        <!-- FOTOS EMPAREJADAS SEGÚN PDF -->
+        <!-- FOTOS EMPAREJADAS -->
         <div class="gallery-row">
             <img src="img/PROYECTO_16_BULL_PREMIER/premier_3.webp" alt="Bullpadel Premier 3">
             <img src="img/PROYECTO_16_BULL_PREMIER/premier_4.webp" alt="Bullpadel Premier 4">
@@ -95,6 +99,11 @@
         <div class="gallery-row">
             <img src="img/PROYECTO_16_BULL_PREMIER/premier_7.webp" alt="Bullpadel Premier 7">
             <img src="img/PROYECTO_16_BULL_PREMIER/premier_8.webp" alt="Bullpadel Premier 8">
+        </div>
+
+        <!-- VÍDEO DE VIMEO AÑADIDO AL FINAL -->
+        <div class="video-container">
+            <iframe src="https://player.vimeo.com/video/1062125568?autoplay=0&loop=1&title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
         </div>
     </section>
     
